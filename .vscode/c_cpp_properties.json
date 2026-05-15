@@ -1,0 +1,33 @@
+{
+    "configurations": [
+        {
+            "browse": {
+                "limitSymbolsToIncludedHeaders": true
+            },
+            "cStandard": "c99",     
+            "compilerPath": "F:/Env/gcc-arm-none-eabi-10.3-2021.10-win32/10_2021.10/bin/arm-none-eabi-gcc",
+            "cppStandard": "c++11",
+            "defines": [ 
+                "STM32F40_41xxx",
+                "USE_STDPERIPH_DRIVER",
+                "HSE_VALUE=8000000"
+            ],
+            "includePath": [
+                "app",
+
+                "driver",
+
+                "firmware/cmsis/core",
+                "firmware/cmsis/device",
+                "firmware/driver/inc",
+                
+                "third_lib/crc",
+                "third_lib/easylogger",
+                "third_lib/ringbuffer"
+            ],
+            "intelliSenseMode": "windows-gcc-arm",
+            "name": "ARM32"
+        }
+    ],
+    "version": 4
+}

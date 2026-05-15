@@ -1,0 +1,36 @@
+{
+    "files.associations": {
+        "*.c": "cpp",
+        "stm32f4xx_adc.h": "c",
+        "stm32f4xx.h": "c",
+        "concepts": "cpp",
+        "cstdio": "cpp",
+        "type_traits": "cpp",
+        "new": "cpp",
+        "typeinfo": "cpp",
+        "compare": "cpp",
+        "cmath": "cpp",
+        "limits": "cpp"
+    },
+
+    "files.autoGuessEncoding": false,
+
+    "files.encoding": "gb2312",
+
+    // 隐藏一些不需要的文件夹和文件
+    "files.exclude": 
+    {
+        "**/.git": true,
+        "**/.svn": true,
+        "**/.hg": true,
+        "**/.DS_Store": true,
+        "**/Thumbs.db": true,
+        "mdk": true,        // true/false
+    },
+
+    "C_Cpp.codeAnalysis.clangTidy.checks.disabled": [
+        "clang-diagnostic-error"
+    ],
+    
+    "C_Cpp.errorSquiggles": "enabled"
+}
