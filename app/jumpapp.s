@@ -2,9 +2,10 @@
     THUMB
     PRESERVE8
 
-    EXPORT  JumpApp
 
 JumpApp         PROC
+								EXPORT  JumpApp
+								
                 LDR     SP, [R0, #0]
                 LDR     PC, [R0, #4]
                 ENDP

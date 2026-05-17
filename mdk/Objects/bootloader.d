@@ -42,3 +42,13 @@
 .\objects\bootloader.o: ..\driver\key.h
 .\objects\bootloader.o: ..\driver\bl_usart.h
 .\objects\bootloader.o: ..\driver\tim_delay.h
+.\objects\bootloader.o: ..\driver\stm32_flash.h
+.\objects\bootloader.o: ..\app\magic_header.h
+.\objects\bootloader.o: ..\third_lib\crc\crc16.h
+.\objects\bootloader.o: F:\APP\keil\keil5\Keil_v5\ARM\ARMCC\Bin\..\include\stddef.h
+.\objects\bootloader.o: ..\third_lib\crc\crc32.h
+.\objects\bootloader.o: ..\third_lib\ringbuffer\ringbuffer.h
+.\objects\bootloader.o: ..\app\utils.h
+.\objects\bootloader.o: ..\app\bitops.h
+.\objects\bootloader.o: ..\third_lib\easylogger\elog.h
+.\objects\bootloader.o: ..\third_lib\easylogger\elog_cfg.h

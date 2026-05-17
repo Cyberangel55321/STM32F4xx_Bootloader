@@ -2,12 +2,14 @@
 ".\objects\main.o"
 ".\objects\board.o"
 ".\objects\bootloader.o"
+".\objects\magic_header.o"
 ".\objects\jumpapp.o"
 ".\objects\bl_usart.o"
 ".\objects\console.o"
 ".\objects\key.o"
 ".\objects\led.o"
 ".\objects\tim_delay.o"
+".\objects\stm32_flash.o"
 ".\objects\startup_stm32f40_41xxx.o"
 ".\objects\system_stm32f4xx.o"
 ".\objects\misc.o"
@@ -59,7 +61,7 @@
 ".\objects\elog_port.o"
 ".\objects\elog_utils.o"
 ".\objects\ringbuffer.o"
---strict --scatter ".\Objects\stm32f407.sct"
+--library_type=microlib --strict --scatter ".\Objects\stm32f407.sct"
 --summary_stderr --info summarysizes --map --load_addr_map_info --xref --callgraph --symbols
 --info sizes --info totals --info unused --info veneers
 --list ".\Listings\stm32f407.map" -o .\Objects\stm32f407.axf

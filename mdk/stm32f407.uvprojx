@@ -189,7 +189,7 @@
             <hadIRAM2>1</hadIRAM2>
             <hadIROM2>0</hadIROM2>
             <StupSel>8</StupSel>
-            <useUlib>0</useUlib>
+            <useUlib>1</useUlib>
             <EndSel>0</EndSel>
             <uLtcg>0</uLtcg>
             <nSecure>0</nSecure>
@@ -399,6 +399,11 @@
               <FilePath>..\app\bootloader.c</FilePath>
             </File>
             <File>
+              <FileName>magic_header.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\app\magic_header.c</FilePath>
+            </File>
+            <File>
               <FileName>jumpapp.s</FileName>
               <FileType>2</FileType>
               <FilePath>..\app\jumpapp.s</FilePath>
@@ -432,6 +437,11 @@
               <FileName>tim_delay.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\driver\tim_delay.c</FilePath>
+            </File>
+            <File>
+              <FileName>stm32_flash.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\driver\stm32_flash.c</FilePath>
             </File>
           </Files>
         </Group>

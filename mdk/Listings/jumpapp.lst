@@ -8,18 +8,19 @@ ARM Macro Assembler    Page 1
     2 00000000                 THUMB
     3 00000000                 PRESERVE8
     4 00000000         
-    5 00000000                 EXPORT           JumpApp
-    6 00000000         
-    7 00000000         JumpApp PROC
-    8 00000000 F8D0 D000       LDR              SP, [R0, #0]
-    9 00000004 F8D0 F004       LDR              PC, [R0, #4]
-   10 00000008                 ENDP
-   11 00000008         
-   12 00000008                 END
+    5 00000000         
+    6 00000000         JumpApp PROC
+    7 00000000                 EXPORT           JumpApp
+    8 00000000         
+    9 00000000 F8D0 D000       LDR              SP, [R0, #0]
+   10 00000004 F8D0 F004       LDR              PC, [R0, #4]
+   11 00000008                 ENDP
+   12 00000008         
+   13 00000008                 END
 Command Line: --debug --xref --diag_suppress=9931 --cpu=Cortex-M4.fp.sp --apcs=
-interwork --depend=.\objects\jumpapp.d -o.\objects\jumpapp.o --predefine="__UVI
-SION_VERSION SETA 536" --predefine="STM32F407xx SETA 1" --list=.\listings\jumpa
-pp.lst ..\app\jumpapp.s
+interwork --depend=.\objects\jumpapp.d -o.\objects\jumpapp.o --predefine="__MIC
+ROLIB SETA 1" --predefine="__UVISION_VERSION SETA 536" --predefine="STM32F407xx
+ SETA 1" --list=.\listings\jumpapp.lst ..\app\jumpapp.s
 
 
 
@@ -38,9 +39,9 @@ JumpApp 00000000
 
 Symbol: JumpApp
    Definitions
-      At line 7 in file ..\app\jumpapp.s
+      At line 6 in file ..\app\jumpapp.s
    Uses
-      At line 5 in file ..\app\jumpapp.s
+      At line 7 in file ..\app\jumpapp.s
 Comment: JumpApp used once
 2 symbols
-335 symbols in table
+336 symbols in table

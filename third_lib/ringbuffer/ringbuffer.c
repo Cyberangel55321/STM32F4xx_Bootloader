@@ -9,6 +9,7 @@ struct ringbuffer
     uint16_t tail;
     uint16_t size;
 
+    // 柔性数组成员，必须是结构体的最后一个成员，且数组大小为0或1
     uint8_t buffer[];
 };
 

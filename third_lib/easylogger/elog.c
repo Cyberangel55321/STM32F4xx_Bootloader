@@ -228,8 +228,10 @@ void elog_deinit(void) {
 /**
  * EasyLogger start after initialize.
  */
-void elog_start(void) {
-    if (!elog.init_ok) {
+void elog_start(void) 
+{
+    if (!elog.init_ok) 
+    {
         return ;
     }
 
