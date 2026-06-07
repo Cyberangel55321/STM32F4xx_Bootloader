@@ -404,6 +404,16 @@
               <FilePath>..\app\magic_header.c</FilePath>
             </File>
             <File>
+              <FileName>boot_config.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\app\boot_config.c</FilePath>
+            </File>
+            <File>
+              <FileName>partition.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\app\partition.c</FilePath>
+            </File>
+            <File>
               <FileName>jumpapp.s</FileName>
               <FileType>2</FileType>
               <FilePath>..\app\jumpapp.s</FilePath>

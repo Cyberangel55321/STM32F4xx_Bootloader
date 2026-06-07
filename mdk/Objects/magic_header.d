@@ -7,3 +7,5 @@
 .\objects\magic_header.o: ..\app\bitops.h
 .\objects\magic_header.o: F:\APP\keil\keil5\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
 .\objects\magic_header.o: ..\app\magic_header.h
+.\objects\magic_header.o: ..\app\boot_config.h
+.\objects\magic_header.o: ..\app\partition.h

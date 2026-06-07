@@ -16,13 +16,13 @@ Section Cross References
     board.o(i.board_lowlevel_init) refers to stm32f4xx_rcc.o(i.RCC_APB1PeriphClockCmd) for RCC_APB1PeriphClockCmd
     board.o(i.fputc) refers to stm32f4xx_usart.o(i.USART_SendData) for USART_SendData
     board.o(i.fputc) refers to stm32f4xx_usart.o(i.USART_GetFlagStatus) for USART_GetFlagStatus
-    bootloader.o(i.application_validate) refers to magic_header.o(i.magic_header_validate) for magic_header_validate
-    bootloader.o(i.application_validate) refers to elog.o(i.elog_output) for elog_output
-    bootloader.o(i.application_validate) refers to magic_header.o(i.magic_header_get_address) for magic_header_get_address
-    bootloader.o(i.application_validate) refers to magic_header.o(i.magic_header_get_length) for magic_header_get_length
-    bootloader.o(i.application_validate) refers to magic_header.o(i.magic_header_get_crc32) for magic_header_get_crc32
-    bootloader.o(i.application_validate) refers to crc32.o(i.crc32) for crc32
-    bootloader.o(i.application_validate) refers to bootloader.o(.constdata) for __FUNCTION__
+    bootloader.o(i.application_validate_partition) refers to magic_header.o(i.magic_header_validate_partition) for magic_header_validate_partition
+    bootloader.o(i.application_validate_partition) refers to elog.o(i.elog_output) for elog_output
+    bootloader.o(i.application_validate_partition) refers to magic_header.o(i.magic_header_get_address_partition) for magic_header_get_address_partition
+    bootloader.o(i.application_validate_partition) refers to magic_header.o(i.magic_header_get_length_partition) for magic_header_get_length_partition
+    bootloader.o(i.application_validate_partition) refers to magic_header.o(i.magic_header_get_crc32_partition) for magic_header_get_crc32_partition
+    bootloader.o(i.application_validate_partition) refers to crc32.o(i.crc32) for crc32
+    bootloader.o(i.application_validate_partition) refers to bootloader.o(.constdata) for __FUNCTION__
     bootloader.o(i.bl_byte_handler) refers to tim_delay.o(i.tim_get_ms) for tim_get_ms
     bootloader.o(i.bl_byte_handler) refers to elog.o(i.elog_output) for elog_output
     bootloader.o(i.bl_byte_handler) refers to crc16.o(i.crc16) for crc16
@@ -33,15 +33,31 @@ Section Cross References
     bootloader.o(i.bl_opcode_boot_handler) refers to bootloader.o(i.bl_response) for bl_response
     bootloader.o(i.bl_opcode_boot_handler) refers to bootloader.o(i.boot_application) for boot_application
     bootloader.o(i.bl_opcode_boot_handler) refers to bootloader.o(.constdata) for __FUNCTION__
+    bootloader.o(i.bl_opcode_commit_handler) refers to elog.o(i.elog_output) for elog_output
+    bootloader.o(i.bl_opcode_commit_handler) refers to boot_config.o(i.boot_config_get_upgrade_state) for boot_config_get_upgrade_state
+    bootloader.o(i.bl_opcode_commit_handler) refers to bootloader.o(i.bl_response) for bl_response
+    bootloader.o(i.bl_opcode_commit_handler) refers to boot_config.o(i.boot_config_get_active_partition) for boot_config_get_active_partition
+    bootloader.o(i.bl_opcode_commit_handler) refers to partition.o(i.partition_get_opposite) for partition_get_opposite
+    bootloader.o(i.bl_opcode_commit_handler) refers to boot_config.o(i.boot_config_set_active_partition) for boot_config_set_active_partition
+    bootloader.o(i.bl_opcode_commit_handler) refers to boot_config.o(i.boot_config_set_upgrade_state) for boot_config_set_upgrade_state
+    bootloader.o(i.bl_opcode_commit_handler) refers to boot_config.o(i.boot_config_save) for boot_config_save
+    bootloader.o(i.bl_opcode_commit_handler) refers to bootloader.o(.constdata) for __FUNCTION__
+    bootloader.o(i.bl_opcode_commit_handler) refers to bootloader.o(.bss) for boot_config
     bootloader.o(i.bl_opcode_erase_handler) refers to elog.o(i.elog_output) for elog_output
+    bootloader.o(i.bl_opcode_erase_handler) refers to boot_config.o(i.boot_config_get_upgrade_state) for boot_config_get_upgrade_state
     bootloader.o(i.bl_opcode_erase_handler) refers to bootloader.o(i.bl_response) for bl_response
     bootloader.o(i.bl_opcode_erase_handler) refers to bootloader.o(i.get_u32_inc) for get_u32_inc
     bootloader.o(i.bl_opcode_erase_handler) refers to stm32_flash.o(i.stm32_flash_unlock) for stm32_flash_unlock
     bootloader.o(i.bl_opcode_erase_handler) refers to stm32_flash.o(i.stm32_flash_erase) for stm32_flash_erase
     bootloader.o(i.bl_opcode_erase_handler) refers to stm32_flash.o(i.stm32_flash_lock) for stm32_flash_lock
     bootloader.o(i.bl_opcode_erase_handler) refers to bootloader.o(.constdata) for __FUNCTION__
+    bootloader.o(i.bl_opcode_erase_handler) refers to bootloader.o(.bss) for boot_config
     bootloader.o(i.bl_opcode_erase_handler) refers to bootloader.o(.data) for packet_payload_length
-    bootloader.o(i.bl_opcode_erase_handler) refers to bootloader.o(.bss) for packet_buffer
+    bootloader.o(i.bl_opcode_get_status_handler) refers to elog.o(i.elog_output) for elog_output
+    bootloader.o(i.bl_opcode_get_status_handler) refers to bootloader.o(i.put_u8_inc) for put_u8_inc
+    bootloader.o(i.bl_opcode_get_status_handler) refers to bootloader.o(i.bl_response) for bl_response
+    bootloader.o(i.bl_opcode_get_status_handler) refers to bootloader.o(.constdata) for __FUNCTION__
+    bootloader.o(i.bl_opcode_get_status_handler) refers to bootloader.o(.bss) for boot_config
     bootloader.o(i.bl_opcode_inquery_handler) refers to elog.o(i.elog_output) for elog_output
     bootloader.o(i.bl_opcode_inquery_handler) refers to bootloader.o(i.bl_response) for bl_response
     bootloader.o(i.bl_opcode_inquery_handler) refers to bootloader.o(i.put_u16) for put_u16
@@ -49,23 +65,49 @@ Section Cross References
     bootloader.o(i.bl_opcode_inquery_handler) refers to bootloader.o(.data) for packet_payload_length
     bootloader.o(i.bl_opcode_inquery_handler) refers to bootloader.o(.bss) for packet_buffer
     bootloader.o(i.bl_opcode_program_handler) refers to elog.o(i.elog_output) for elog_output
+    bootloader.o(i.bl_opcode_program_handler) refers to boot_config.o(i.boot_config_get_upgrade_state) for boot_config_get_upgrade_state
     bootloader.o(i.bl_opcode_program_handler) refers to bootloader.o(i.bl_response) for bl_response
     bootloader.o(i.bl_opcode_program_handler) refers to bootloader.o(i.get_u32_inc) for get_u32_inc
+    bootloader.o(i.bl_opcode_program_handler) refers to partition.o(i.partition_get_download_target) for partition_get_download_target
+    bootloader.o(i.bl_opcode_program_handler) refers to partition.o(i.partition_get_size) for partition_get_size
     bootloader.o(i.bl_opcode_program_handler) refers to stm32_flash.o(i.stm32_flash_unlock) for stm32_flash_unlock
     bootloader.o(i.bl_opcode_program_handler) refers to stm32_flash.o(i.stm32_flash_program) for stm32_flash_program
     bootloader.o(i.bl_opcode_program_handler) refers to stm32_flash.o(i.stm32_flash_lock) for stm32_flash_lock
     bootloader.o(i.bl_opcode_program_handler) refers to bootloader.o(.constdata) for __FUNCTION__
+    bootloader.o(i.bl_opcode_program_handler) refers to bootloader.o(.bss) for boot_config
     bootloader.o(i.bl_opcode_program_handler) refers to bootloader.o(.data) for packet_payload_length
-    bootloader.o(i.bl_opcode_program_handler) refers to bootloader.o(.bss) for packet_buffer
     bootloader.o(i.bl_opcode_reset_handler) refers to elog.o(i.elog_output) for elog_output
     bootloader.o(i.bl_opcode_reset_handler) refers to bootloader.o(i.bl_response) for bl_response
     bootloader.o(i.bl_opcode_reset_handler) refers to tim_delay.o(i.tim_delay_ms) for tim_delay_ms
     bootloader.o(i.bl_opcode_reset_handler) refers to bootloader.o(i.NVIC_SystemReset) for NVIC_SystemReset
     bootloader.o(i.bl_opcode_reset_handler) refers to bootloader.o(.constdata) for __FUNCTION__
+    bootloader.o(i.bl_opcode_rollback_handler) refers to elog.o(i.elog_output) for elog_output
+    bootloader.o(i.bl_opcode_rollback_handler) refers to boot_config.o(i.boot_config_get_active_partition) for boot_config_get_active_partition
+    bootloader.o(i.bl_opcode_rollback_handler) refers to partition.o(i.partition_get_opposite) for partition_get_opposite
+    bootloader.o(i.bl_opcode_rollback_handler) refers to boot_config.o(i.boot_config_is_partition_valid) for boot_config_is_partition_valid
+    bootloader.o(i.bl_opcode_rollback_handler) refers to bootloader.o(i.bl_response) for bl_response
+    bootloader.o(i.bl_opcode_rollback_handler) refers to boot_config.o(i.boot_config_set_active_partition) for boot_config_set_active_partition
+    bootloader.o(i.bl_opcode_rollback_handler) refers to boot_config.o(i.boot_config_set_upgrade_state) for boot_config_set_upgrade_state
+    bootloader.o(i.bl_opcode_rollback_handler) refers to boot_config.o(i.boot_config_save) for boot_config_save
+    bootloader.o(i.bl_opcode_rollback_handler) refers to bootloader.o(.constdata) for __FUNCTION__
+    bootloader.o(i.bl_opcode_rollback_handler) refers to bootloader.o(.bss) for boot_config
+    bootloader.o(i.bl_opcode_start_upgrade_handler) refers to elog.o(i.elog_output) for elog_output
+    bootloader.o(i.bl_opcode_start_upgrade_handler) refers to boot_config.o(i.boot_config_get_upgrade_state) for boot_config_get_upgrade_state
+    bootloader.o(i.bl_opcode_start_upgrade_handler) refers to partition.o(i.partition_get_download_target) for partition_get_download_target
+    bootloader.o(i.bl_opcode_start_upgrade_handler) refers to partition.o(i.partition_get_address) for partition_get_address
+    bootloader.o(i.bl_opcode_start_upgrade_handler) refers to boot_config.o(i.boot_config_set_upgrade_state) for boot_config_set_upgrade_state
+    bootloader.o(i.bl_opcode_start_upgrade_handler) refers to boot_config.o(i.boot_config_save) for boot_config_save
+    bootloader.o(i.bl_opcode_start_upgrade_handler) refers to bootloader.o(i.bl_response) for bl_response
+    bootloader.o(i.bl_opcode_start_upgrade_handler) refers to bootloader.o(.constdata) for __FUNCTION__
+    bootloader.o(i.bl_opcode_start_upgrade_handler) refers to bootloader.o(.bss) for boot_config
     bootloader.o(i.bl_opcode_verify_handler) refers to elog.o(i.elog_output) for elog_output
     bootloader.o(i.bl_opcode_verify_handler) refers to bootloader.o(i.bl_response) for bl_response
     bootloader.o(i.bl_opcode_verify_handler) refers to bootloader.o(i.get_u32_inc) for get_u32_inc
     bootloader.o(i.bl_opcode_verify_handler) refers to crc32.o(i.crc32) for crc32
+    bootloader.o(i.bl_opcode_verify_handler) refers to partition.o(i.partition_get_download_target) for partition_get_download_target
+    bootloader.o(i.bl_opcode_verify_handler) refers to boot_config.o(i.boot_config_set_partition_valid) for boot_config_set_partition_valid
+    bootloader.o(i.bl_opcode_verify_handler) refers to boot_config.o(i.boot_config_set_upgrade_state) for boot_config_set_upgrade_state
+    bootloader.o(i.bl_opcode_verify_handler) refers to boot_config.o(i.boot_config_save) for boot_config_save
     bootloader.o(i.bl_opcode_verify_handler) refers to bootloader.o(.constdata) for __FUNCTION__
     bootloader.o(i.bl_opcode_verify_handler) refers to bootloader.o(.data) for packet_payload_length
     bootloader.o(i.bl_opcode_verify_handler) refers to bootloader.o(.bss) for packet_buffer
@@ -75,6 +117,10 @@ Section Cross References
     bootloader.o(i.bl_packet_handler) refers to bootloader.o(i.bl_opcode_verify_handler) for bl_opcode_verify_handler
     bootloader.o(i.bl_packet_handler) refers to bootloader.o(i.bl_opcode_reset_handler) for bl_opcode_reset_handler
     bootloader.o(i.bl_packet_handler) refers to bootloader.o(i.bl_opcode_boot_handler) for bl_opcode_boot_handler
+    bootloader.o(i.bl_packet_handler) refers to bootloader.o(i.bl_opcode_start_upgrade_handler) for bl_opcode_start_upgrade_handler
+    bootloader.o(i.bl_packet_handler) refers to bootloader.o(i.bl_opcode_commit_handler) for bl_opcode_commit_handler
+    bootloader.o(i.bl_packet_handler) refers to bootloader.o(i.bl_opcode_get_status_handler) for bl_opcode_get_status_handler
+    bootloader.o(i.bl_packet_handler) refers to bootloader.o(i.bl_opcode_rollback_handler) for bl_opcode_rollback_handler
     bootloader.o(i.bl_packet_handler) refers to elog.o(i.elog_output) for elog_output
     bootloader.o(i.bl_packet_handler) refers to bootloader.o(.data) for packet_opcode
     bootloader.o(i.bl_packet_handler) refers to bootloader.o(.constdata) for __FUNCTION__
@@ -86,17 +132,25 @@ Section Cross References
     bootloader.o(i.bl_response) refers to bootloader.o(.bss) for packet_buffer
     bootloader.o(i.bl_usart_rx_handler) refers to ringbuffer.o(i.rb_puts) for rb_puts
     bootloader.o(i.bl_usart_rx_handler) refers to bootloader.o(.data) for rxrb
-    bootloader.o(i.boot_application) refers to bootloader.o(i.application_validate) for application_validate
-    bootloader.o(i.boot_application) refers to elog.o(i.elog_output) for elog_output
-    bootloader.o(i.boot_application) refers to tim_delay.o(i.tim_delay_ms) for tim_delay_ms
-    bootloader.o(i.boot_application) refers to led.o(i.led_off) for led_off
-    bootloader.o(i.boot_application) refers to stm32f4xx_tim.o(i.TIM_DeInit) for TIM_DeInit
-    bootloader.o(i.boot_application) refers to stm32f4xx_usart.o(i.USART_DeInit) for USART_DeInit
-    bootloader.o(i.boot_application) refers to bootloader.o(i.NVIC_DisableIRQ) for NVIC_DisableIRQ
-    bootloader.o(i.boot_application) refers to jumpapp.o(.text) for JumpApp
-    bootloader.o(i.boot_application) refers to bootloader.o(.constdata) for __FUNCTION__
-    bootloader.o(i.boot_application) refers to board.o(.data) for led1
+    bootloader.o(i.boot_application) refers to boot_config.o(i.boot_config_get_active_partition) for boot_config_get_active_partition
+    bootloader.o(i.boot_application) refers to bootloader.o(i.boot_application_partition) for boot_application_partition
+    bootloader.o(i.boot_application) refers to bootloader.o(.bss) for boot_config
+    bootloader.o(i.boot_application_partition) refers to magic_header.o(i.magic_header_get_address_partition) for magic_header_get_address_partition
+    bootloader.o(i.boot_application_partition) refers to elog.o(i.elog_output) for elog_output
+    bootloader.o(i.boot_application_partition) refers to bootloader.o(i.application_validate_partition) for application_validate_partition
+    bootloader.o(i.boot_application_partition) refers to tim_delay.o(i.tim_delay_ms) for tim_delay_ms
+    bootloader.o(i.boot_application_partition) refers to led.o(i.led_off) for led_off
+    bootloader.o(i.boot_application_partition) refers to stm32f4xx_tim.o(i.TIM_DeInit) for TIM_DeInit
+    bootloader.o(i.boot_application_partition) refers to stm32f4xx_usart.o(i.USART_DeInit) for USART_DeInit
+    bootloader.o(i.boot_application_partition) refers to bootloader.o(i.NVIC_DisableIRQ) for NVIC_DisableIRQ
+    bootloader.o(i.boot_application_partition) refers to jumpapp.o(.text) for JumpApp
+    bootloader.o(i.boot_application_partition) refers to bootloader.o(.constdata) for __FUNCTION__
+    bootloader.o(i.boot_application_partition) refers to board.o(.data) for led1
     bootloader.o(i.bootloader_main) refers to elog.o(i.elog_output) for elog_output
+    bootloader.o(i.bootloader_main) refers to boot_config.o(i.boot_config_load) for boot_config_load
+    bootloader.o(i.bootloader_main) refers to boot_config.o(i.boot_config_get_upgrade_state) for boot_config_get_upgrade_state
+    bootloader.o(i.bootloader_main) refers to boot_config.o(i.boot_config_set_upgrade_state) for boot_config_set_upgrade_state
+    bootloader.o(i.bootloader_main) refers to boot_config.o(i.boot_config_save) for boot_config_save
     bootloader.o(i.bootloader_main) refers to key.o(i.key_init) for key_init
     bootloader.o(i.bootloader_main) refers to ringbuffer.o(i.rb_new) for rb_new
     bootloader.o(i.bootloader_main) refers to bl_usart.o(i.bl_usart_init) for bl_usart_init
@@ -104,7 +158,10 @@ Section Cross References
     bootloader.o(i.bootloader_main) refers to bootloader.o(i.magic_header_trap_boot) for magic_header_trap_boot
     bootloader.o(i.bootloader_main) refers to bootloader.o(i.key_trap_check) for key_trap_check
     bootloader.o(i.bootloader_main) refers to bootloader.o(i.rx_trap_boot) for rx_trap_boot
-    bootloader.o(i.bootloader_main) refers to bootloader.o(i.boot_application) for boot_application
+    bootloader.o(i.bootloader_main) refers to boot_config.o(i.boot_config_get_active_partition) for boot_config_get_active_partition
+    bootloader.o(i.bootloader_main) refers to boot_config.o(i.boot_config_is_partition_valid) for boot_config_is_partition_valid
+    bootloader.o(i.bootloader_main) refers to bootloader.o(i.boot_application_partition) for boot_application_partition
+    bootloader.o(i.bootloader_main) refers to partition.o(i.partition_get_opposite) for partition_get_opposite
     bootloader.o(i.bootloader_main) refers to led.o(i.led_init) for led_init
     bootloader.o(i.bootloader_main) refers to led.o(i.led_on) for led_on
     bootloader.o(i.bootloader_main) refers to bootloader.o(i.wait_key_release) for wait_key_release
@@ -116,8 +173,8 @@ Section Cross References
     bootloader.o(i.bootloader_main) refers to bootloader.o(i.bl_byte_handler) for bl_byte_handler
     bootloader.o(i.bootloader_main) refers to bootloader.o(i.bl_packet_handler) for bl_packet_handler
     bootloader.o(i.bootloader_main) refers to bootloader.o(.constdata) for __FUNCTION__
+    bootloader.o(i.bootloader_main) refers to bootloader.o(.bss) for boot_config
     bootloader.o(i.bootloader_main) refers to board.o(.data) for key2
-    bootloader.o(i.bootloader_main) refers to bootloader.o(.bss) for rb_buffer
     bootloader.o(i.bootloader_main) refers to bootloader.o(.data) for rxrb
     bootloader.o(i.bootloader_main) refers to bootloader.o(i.bl_usart_rx_handler) for bl_usart_rx_handler
     bootloader.o(i.key_press_check) refers to key.o(i.key_read) for key_read
@@ -128,9 +185,11 @@ Section Cross References
     bootloader.o(i.key_trap_check) refers to elog.o(i.elog_output) for elog_output
     bootloader.o(i.key_trap_check) refers to board.o(.data) for key2
     bootloader.o(i.key_trap_check) refers to bootloader.o(.constdata) for __FUNCTION__
-    bootloader.o(i.magic_header_trap_boot) refers to magic_header.o(i.magic_header_validate) for magic_header_validate
+    bootloader.o(i.magic_header_trap_boot) refers to boot_config.o(i.boot_config_get_active_partition) for boot_config_get_active_partition
+    bootloader.o(i.magic_header_trap_boot) refers to magic_header.o(i.magic_header_validate_partition) for magic_header_validate_partition
     bootloader.o(i.magic_header_trap_boot) refers to elog.o(i.elog_output) for elog_output
-    bootloader.o(i.magic_header_trap_boot) refers to bootloader.o(i.application_validate) for application_validate
+    bootloader.o(i.magic_header_trap_boot) refers to bootloader.o(i.application_validate_partition) for application_validate_partition
+    bootloader.o(i.magic_header_trap_boot) refers to bootloader.o(.bss) for boot_config
     bootloader.o(i.magic_header_trap_boot) refers to bootloader.o(.constdata) for __FUNCTION__
     bootloader.o(i.put_u16_inc) refers to bootloader.o(i.put_u16) for put_u16
     bootloader.o(i.rx_trap_boot) refers to tim_delay.o(i.tim_delay_ms) for tim_delay_ms
@@ -141,7 +200,67 @@ Section Cross References
     bootloader.o(i.wait_key_release) refers to tim_delay.o(i.tim_delay_ms) for tim_delay_ms
     bootloader.o(i.wait_key_release) refers to key.o(i.key_read) for key_read
     bootloader.o(i.wait_key_release) refers to board.o(.data) for key2
-    magic_header.o(i.magic_header_validate) refers to crc32.o(i.crc32) for crc32
+    magic_header.o(i.magic_header_get_address) refers to magic_header.o(i.magic_header_get_address_partition) for magic_header_get_address_partition
+    magic_header.o(i.magic_header_get_crc32) refers to magic_header.o(i.magic_header_get_crc32_partition) for magic_header_get_crc32_partition
+    magic_header.o(i.magic_header_get_length) refers to magic_header.o(i.magic_header_get_length_partition) for magic_header_get_length_partition
+    magic_header.o(i.magic_header_get_offset) refers to magic_header.o(i.magic_header_get_offset_partition) for magic_header_get_offset_partition
+    magic_header.o(i.magic_header_get_type) refers to magic_header.o(i.magic_header_get_type_partition) for magic_header_get_type_partition
+    magic_header.o(i.magic_header_validate) refers to magic_header.o(i.magic_header_validate_partition) for magic_header_validate_partition
+    magic_header.o(i.magic_header_validate_partition) refers to crc32.o(i.crc32) for crc32
+    boot_config.o(i.boot_config_calc_crc32) refers to crc32.o(i.crc32) for crc32
+    boot_config.o(i.boot_config_init_default) refers to elog.o(i.elog_output) for elog_output
+    boot_config.o(i.boot_config_init_default) refers to memseta.o(.text) for __aeabi_memclr4
+    boot_config.o(i.boot_config_init_default) refers to boot_config.o(i.boot_config_calc_crc32) for boot_config_calc_crc32
+    boot_config.o(i.boot_config_init_default) refers to boot_config.o(.constdata) for __FUNCTION__
+    boot_config.o(i.boot_config_load) refers to elog.o(i.elog_output) for elog_output
+    boot_config.o(i.boot_config_load) refers to memcpya.o(.text) for __aeabi_memcpy4
+    boot_config.o(i.boot_config_load) refers to boot_config.o(i.boot_config_validate) for boot_config_validate
+    boot_config.o(i.boot_config_load) refers to boot_config.o(i.boot_config_init_default) for boot_config_init_default
+    boot_config.o(i.boot_config_load) refers to boot_config.o(.constdata) for __FUNCTION__
+    boot_config.o(i.boot_config_save) refers to elog.o(i.elog_output) for elog_output
+    boot_config.o(i.boot_config_save) refers to memcpya.o(.text) for __aeabi_memcpy4
+    boot_config.o(i.boot_config_save) refers to boot_config.o(i.boot_config_calc_crc32) for boot_config_calc_crc32
+    boot_config.o(i.boot_config_save) refers to stm32_flash.o(i.stm32_flash_unlock) for stm32_flash_unlock
+    boot_config.o(i.boot_config_save) refers to stm32_flash.o(i.stm32_flash_erase) for stm32_flash_erase
+    boot_config.o(i.boot_config_save) refers to stm32_flash.o(i.stm32_flash_program) for stm32_flash_program
+    boot_config.o(i.boot_config_save) refers to stm32_flash.o(i.stm32_flash_lock) for stm32_flash_lock
+    boot_config.o(i.boot_config_save) refers to memcmp.o(.text) for memcmp
+    boot_config.o(i.boot_config_save) refers to boot_config.o(.constdata) for __FUNCTION__
+    boot_config.o(i.boot_config_set_active_partition) refers to elog.o(i.elog_output) for elog_output
+    boot_config.o(i.boot_config_set_active_partition) refers to boot_config.o(.constdata) for __FUNCTION__
+    boot_config.o(i.boot_config_set_partition_valid) refers to elog.o(i.elog_output) for elog_output
+    boot_config.o(i.boot_config_set_partition_valid) refers to boot_config.o(.constdata) for __FUNCTION__
+    boot_config.o(i.boot_config_set_upgrade_state) refers to elog.o(i.elog_output) for elog_output
+    boot_config.o(i.boot_config_set_upgrade_state) refers to boot_config.o(.constdata) for __FUNCTION__
+    boot_config.o(i.boot_config_validate) refers to elog.o(i.elog_output) for elog_output
+    boot_config.o(i.boot_config_validate) refers to boot_config.o(i.boot_config_calc_crc32) for boot_config_calc_crc32
+    boot_config.o(i.boot_config_validate) refers to boot_config.o(.constdata) for __FUNCTION__
+    partition.o(i.partition_erase) refers to partition.o(i.partition_get_address) for partition_get_address
+    partition.o(i.partition_erase) refers to partition.o(i.partition_get_size) for partition_get_size
+    partition.o(i.partition_erase) refers to elog.o(i.elog_output) for elog_output
+    partition.o(i.partition_erase) refers to stm32_flash.o(i.stm32_flash_unlock) for stm32_flash_unlock
+    partition.o(i.partition_erase) refers to stm32_flash.o(i.stm32_flash_erase) for stm32_flash_erase
+    partition.o(i.partition_erase) refers to stm32_flash.o(i.stm32_flash_lock) for stm32_flash_lock
+    partition.o(i.partition_erase) refers to partition.o(.constdata) for __FUNCTION__
+    partition.o(i.partition_erase_range) refers to elog.o(i.elog_output) for elog_output
+    partition.o(i.partition_erase_range) refers to stm32_flash.o(i.stm32_flash_unlock) for stm32_flash_unlock
+    partition.o(i.partition_erase_range) refers to stm32_flash.o(i.stm32_flash_erase) for stm32_flash_erase
+    partition.o(i.partition_erase_range) refers to stm32_flash.o(i.stm32_flash_lock) for stm32_flash_lock
+    partition.o(i.partition_erase_range) refers to partition.o(.constdata) for __FUNCTION__
+    partition.o(i.partition_get_address) refers to elog.o(i.elog_output) for elog_output
+    partition.o(i.partition_get_address) refers to partition.o(.constdata) for __FUNCTION__
+    partition.o(i.partition_get_download_target) refers to boot_config.o(i.boot_config_get_active_partition) for boot_config_get_active_partition
+    partition.o(i.partition_get_download_target) refers to partition.o(i.partition_get_opposite) for partition_get_opposite
+    partition.o(i.partition_get_size) refers to elog.o(i.elog_output) for elog_output
+    partition.o(i.partition_get_size) refers to partition.o(.constdata) for __FUNCTION__
+    partition.o(i.partition_validate) refers to magic_header.o(i.magic_header_get_address_partition) for magic_header_get_address_partition
+    partition.o(i.partition_validate) refers to elog.o(i.elog_output) for elog_output
+    partition.o(i.partition_validate) refers to partition.o(.constdata) for __FUNCTION__
+    partition.o(i.partition_validate_crc32) refers to partition.o(i.partition_get_address) for partition_get_address
+    partition.o(i.partition_validate_crc32) refers to partition.o(i.partition_get_size) for partition_get_size
+    partition.o(i.partition_validate_crc32) refers to elog.o(i.elog_output) for elog_output
+    partition.o(i.partition_validate_crc32) refers to crc32.o(i.crc32) for crc32
+    partition.o(i.partition_validate_crc32) refers to partition.o(.constdata) for __FUNCTION__
     bl_usart.o(i.USART3_IRQHandler) refers to stm32f4xx_usart.o(i.USART_GetITStatus) for USART_GetITStatus
     bl_usart.o(i.USART3_IRQHandler) refers to stm32f4xx_usart.o(i.USART_ReceiveData) for USART_ReceiveData
     bl_usart.o(i.USART3_IRQHandler) refers to stm32f4xx_usart.o(i.USART_ClearITPendingBit) for USART_ClearITPendingBit
@@ -829,8 +948,24 @@ Removing Unused input sections from the image.
     Removing bootloader.o(.rev16_text), (4 bytes).
     Removing bootloader.o(.revsh_text), (4 bytes).
     Removing bootloader.o(.rrx_text), (6 bytes).
-    Removing magic_header.o(i.magic_header_get_offset), (12 bytes).
-    Removing magic_header.o(i.magic_header_get_type), (12 bytes).
+    Removing magic_header.o(i.magic_header_get_address), (10 bytes).
+    Removing magic_header.o(i.magic_header_get_crc32), (10 bytes).
+    Removing magic_header.o(i.magic_header_get_length), (10 bytes).
+    Removing magic_header.o(i.magic_header_get_offset), (10 bytes).
+    Removing magic_header.o(i.magic_header_get_offset_partition), (28 bytes).
+    Removing magic_header.o(i.magic_header_get_type), (10 bytes).
+    Removing magic_header.o(i.magic_header_get_type_partition), (28 bytes).
+    Removing magic_header.o(i.magic_header_validate), (10 bytes).
+    Removing boot_config.o(.rev16_text), (4 bytes).
+    Removing boot_config.o(.revsh_text), (4 bytes).
+    Removing boot_config.o(.rrx_text), (6 bytes).
+    Removing partition.o(.rev16_text), (4 bytes).
+    Removing partition.o(.revsh_text), (4 bytes).
+    Removing partition.o(.rrx_text), (6 bytes).
+    Removing partition.o(i.partition_erase), (148 bytes).
+    Removing partition.o(i.partition_erase_range), (268 bytes).
+    Removing partition.o(i.partition_validate), (300 bytes).
+    Removing partition.o(i.partition_validate_crc32), (228 bytes).
     Removing bl_usart.o(.rev16_text), (4 bytes).
     Removing bl_usart.o(.revsh_text), (4 bytes).
     Removing bl_usart.o(.rrx_text), (6 bytes).
@@ -1676,7 +1811,7 @@ Removing Unused input sections from the image.
     Removing elog_utils.o(i.elog_memcpy), (256 bytes).
     Removing ringbuffer.o(i.rb_gets), (42 bytes).
 
-853 unused section(s) (total 38542 bytes) removed from the image.
+869 unused section(s) (total 39606 bytes) removed from the image.
 
 ==============================================================================
 
@@ -1688,38 +1823,39 @@ Image Symbol Table
 
     ../clib/microlib/division.c              0x00000000   Number         0  uidiv.o ABSOLUTE
     ../clib/microlib/division.c              0x00000000   Number         0  uldiv.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry9a.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry8b.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry8a.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry7b.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry7a.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry12b.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry12a.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry11b.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry11a.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry10b.o ABSOLUTE
     ../clib/microlib/init/entry.s            0x00000000   Number         0  entry5.o ABSOLUTE
     ../clib/microlib/init/entry.s            0x00000000   Number         0  entry10a.o ABSOLUTE
     ../clib/microlib/init/entry.s            0x00000000   Number         0  entry9b.o ABSOLUTE
-    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry12b.o ABSOLUTE
-    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry9a.o ABSOLUTE
     ../clib/microlib/init/entry.s            0x00000000   Number         0  entry2.o ABSOLUTE
-    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry8b.o ABSOLUTE
-    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry8a.o ABSOLUTE
-    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry12a.o ABSOLUTE
-    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry10b.o ABSOLUTE
-    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry11b.o ABSOLUTE
-    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry11a.o ABSOLUTE
-    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry.o ABSOLUTE
-    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry7b.o ABSOLUTE
-    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry7a.o ABSOLUTE
+    ../clib/microlib/longlong.c              0x00000000   Number         0  llsshr.o ABSOLUTE
     ../clib/microlib/longlong.c              0x00000000   Number         0  llushr.o ABSOLUTE
     ../clib/microlib/longlong.c              0x00000000   Number         0  llshl.o ABSOLUTE
-    ../clib/microlib/longlong.c              0x00000000   Number         0  llsshr.o ABSOLUTE
-    ../clib/microlib/printf/printf.c         0x00000000   Number         0  printf6.o ABSOLUTE
-    ../clib/microlib/printf/printf.c         0x00000000   Number         0  printf7.o ABSOLUTE
+    ../clib/microlib/printf/printf.c         0x00000000   Number         0  printfb.o ABSOLUTE
+    ../clib/microlib/printf/printf.c         0x00000000   Number         0  printf3.o ABSOLUTE
+    ../clib/microlib/printf/printf.c         0x00000000   Number         0  printf1.o ABSOLUTE
     ../clib/microlib/printf/printf.c         0x00000000   Number         0  printfa.o ABSOLUTE
     ../clib/microlib/printf/printf.c         0x00000000   Number         0  printf8.o ABSOLUTE
+    ../clib/microlib/printf/printf.c         0x00000000   Number         0  printf7.o ABSOLUTE
+    ../clib/microlib/printf/printf.c         0x00000000   Number         0  printf6.o ABSOLUTE
     ../clib/microlib/printf/printf.c         0x00000000   Number         0  printf5.o ABSOLUTE
     ../clib/microlib/printf/printf.c         0x00000000   Number         0  printf4.o ABSOLUTE
-    ../clib/microlib/printf/printf.c         0x00000000   Number         0  printf3.o ABSOLUTE
     ../clib/microlib/printf/printf.c         0x00000000   Number         0  printf2.o ABSOLUTE
-    ../clib/microlib/printf/printf.c         0x00000000   Number         0  printf1.o ABSOLUTE
     ../clib/microlib/printf/printf.c         0x00000000   Number         0  printf0.o ABSOLUTE
-    ../clib/microlib/printf/printf.c         0x00000000   Number         0  printfb.o ABSOLUTE
     ../clib/microlib/printf/stubs.s          0x00000000   Number         0  stubs.o ABSOLUTE
     ../clib/microlib/stdio/streams.c         0x00000000   Number         0  stdout.o ABSOLUTE
     ../clib/microlib/string/memchr.c         0x00000000   Number         0  memchr.o ABSOLUTE
+    ../clib/microlib/string/memcmp.c         0x00000000   Number         0  memcmp.o ABSOLUTE
     ../clib/microlib/string/memcpy.c         0x00000000   Number         0  memcpyb.o ABSOLUTE
     ../clib/microlib/string/memcpy.c         0x00000000   Number         0  memcpya.o ABSOLUTE
     ../clib/microlib/string/memset.c         0x00000000   Number         0  memseta.o ABSOLUTE
@@ -1734,7 +1870,9 @@ Image Symbol Table
     ../fplib/microlib/fpfix.c                0x00000000   Number         0  dfixul.o ABSOLUTE
     ../fplib/microlib/fpmul.c                0x00000000   Number         0  dmul.o ABSOLUTE
     ..\\app\\board.c                         0x00000000   Number         0  board.o ABSOLUTE
+    ..\\app\\boot_config.c                   0x00000000   Number         0  boot_config.o ABSOLUTE
     ..\\app\\bootloader.c                    0x00000000   Number         0  bootloader.o ABSOLUTE
+    ..\\app\\partition.c                     0x00000000   Number         0  partition.o ABSOLUTE
     ..\\driver\\bl_usart.c                   0x00000000   Number         0  bl_usart.o ABSOLUTE
     ..\\driver\\console.c                    0x00000000   Number         0  console.o ABSOLUTE
     ..\\driver\\key.c                        0x00000000   Number         0  key.o ABSOLUTE
@@ -1785,10 +1923,12 @@ Image Symbol Table
     ..\\firmware\\driver\\src\\stm32f4xx_usart.c 0x00000000   Number         0  stm32f4xx_usart.o ABSOLUTE
     ..\\firmware\\driver\\src\\stm32f4xx_wwdg.c 0x00000000   Number         0  stm32f4xx_wwdg.o ABSOLUTE
     ..\app\board.c                           0x00000000   Number         0  board.o ABSOLUTE
+    ..\app\boot_config.c                     0x00000000   Number         0  boot_config.o ABSOLUTE
     ..\app\bootloader.c                      0x00000000   Number         0  bootloader.o ABSOLUTE
     ..\app\jumpapp.s                         0x00000000   Number         0  jumpapp.o ABSOLUTE
     ..\app\magic_header.c                    0x00000000   Number         0  magic_header.o ABSOLUTE
     ..\app\main.c                            0x00000000   Number         0  main.o ABSOLUTE
+    ..\app\partition.c                       0x00000000   Number         0  partition.o ABSOLUTE
     ..\driver\bl_usart.c                     0x00000000   Number         0  bl_usart.o ABSOLUTE
     ..\driver\console.c                      0x00000000   Number         0  console.o ABSOLUTE
     ..\driver\key.c                          0x00000000   Number         0  key.o ABSOLUTE
@@ -1871,231 +2011,277 @@ Image Symbol Table
     .text                                    0x08000252   Section        0  memseta.o(.text)
     .text                                    0x08000276   Section        0  strstr.o(.text)
     .text                                    0x0800029a   Section        0  strlen.o(.text)
-    .text                                    0x080002a8   Section        0  strncmp.o(.text)
-    .text                                    0x080002c6   Section        0  uidiv.o(.text)
-    .text                                    0x080002f2   Section        0  llshl.o(.text)
-    .text                                    0x08000310   Section        0  llushr.o(.text)
-    .text                                    0x08000330   Section        0  iusefp.o(.text)
-    .text                                    0x08000330   Section        0  dadd.o(.text)
-    .text                                    0x0800047e   Section        0  dmul.o(.text)
-    .text                                    0x08000562   Section        0  ddiv.o(.text)
-    .text                                    0x08000640   Section        0  dfixul.o(.text)
-    .text                                    0x08000670   Section       48  cdrcmple.o(.text)
-    .text                                    0x080006a0   Section       36  init.o(.text)
-    .text                                    0x080006c4   Section        0  llsshr.o(.text)
-    .text                                    0x080006e8   Section        0  depilogue.o(.text)
-    i.FLASH_EraseSector                      0x080007a4   Section        0  stm32f4xx_flash.o(i.FLASH_EraseSector)
-    i.FLASH_GetStatus                        0x0800082c   Section        0  stm32f4xx_flash.o(i.FLASH_GetStatus)
-    i.FLASH_Lock                             0x08000880   Section        0  stm32f4xx_flash.o(i.FLASH_Lock)
-    i.FLASH_ProgramWord                      0x08000894   Section        0  stm32f4xx_flash.o(i.FLASH_ProgramWord)
-    i.FLASH_Unlock                           0x080008e4   Section        0  stm32f4xx_flash.o(i.FLASH_Unlock)
-    i.FLASH_WaitForLastOperation             0x08000908   Section        0  stm32f4xx_flash.o(i.FLASH_WaitForLastOperation)
-    i.GPIO_Init                              0x0800092a   Section        0  stm32f4xx_gpio.o(i.GPIO_Init)
-    i.GPIO_PinAFConfig                       0x080009ba   Section        0  stm32f4xx_gpio.o(i.GPIO_PinAFConfig)
-    i.GPIO_ReadInputDataBit                  0x08000a00   Section        0  stm32f4xx_gpio.o(i.GPIO_ReadInputDataBit)
-    i.GPIO_StructInit                        0x08000a12   Section        0  stm32f4xx_gpio.o(i.GPIO_StructInit)
-    i.GPIO_WriteBit                          0x08000a24   Section        0  stm32f4xx_gpio.o(i.GPIO_WriteBit)
-    i.NVIC_DisableIRQ                        0x08000a30   Section        0  bootloader.o(i.NVIC_DisableIRQ)
-    NVIC_DisableIRQ                          0x08000a31   Thumb Code    18  bootloader.o(i.NVIC_DisableIRQ)
-    i.NVIC_Init                              0x08000a48   Section        0  misc.o(i.NVIC_Init)
-    i.NVIC_SystemReset                       0x08000ac0   Section        0  bootloader.o(i.NVIC_SystemReset)
-    NVIC_SystemReset                         0x08000ac1   Thumb Code    56  bootloader.o(i.NVIC_SystemReset)
-    i.RCC_AHB1PeriphClockCmd                 0x08000b00   Section        0  stm32f4xx_rcc.o(i.RCC_AHB1PeriphClockCmd)
-    i.RCC_APB1PeriphClockCmd                 0x08000b20   Section        0  stm32f4xx_rcc.o(i.RCC_APB1PeriphClockCmd)
-    i.RCC_APB1PeriphResetCmd                 0x08000b40   Section        0  stm32f4xx_rcc.o(i.RCC_APB1PeriphResetCmd)
-    i.RCC_APB2PeriphClockCmd                 0x08000b60   Section        0  stm32f4xx_rcc.o(i.RCC_APB2PeriphClockCmd)
-    i.RCC_APB2PeriphResetCmd                 0x08000b80   Section        0  stm32f4xx_rcc.o(i.RCC_APB2PeriphResetCmd)
-    i.RCC_GetClocksFreq                      0x08000ba0   Section        0  stm32f4xx_rcc.o(i.RCC_GetClocksFreq)
-    i.SetSysClock                            0x08000c88   Section        0  system_stm32f4xx.o(i.SetSysClock)
-    SetSysClock                              0x08000c89   Thumb Code   220  system_stm32f4xx.o(i.SetSysClock)
-    i.SystemInit                             0x08000d74   Section        0  system_stm32f4xx.o(i.SystemInit)
-    i.TIM6_DAC_IRQHandler                    0x08000ddc   Section        0  tim_delay.o(i.TIM6_DAC_IRQHandler)
-    i.TIM_ClearITPendingBit                  0x08000e20   Section        0  stm32f4xx_tim.o(i.TIM_ClearITPendingBit)
-    i.TIM_Cmd                                0x08000e26   Section        0  stm32f4xx_tim.o(i.TIM_Cmd)
-    i.TIM_DeInit                             0x08000e40   Section        0  stm32f4xx_tim.o(i.TIM_DeInit)
-    i.TIM_GetCounter                         0x08000fd0   Section        0  stm32f4xx_tim.o(i.TIM_GetCounter)
-    i.TIM_GetITStatus                        0x08000fd6   Section        0  stm32f4xx_tim.o(i.TIM_GetITStatus)
-    i.TIM_ITConfig                           0x08000ff8   Section        0  stm32f4xx_tim.o(i.TIM_ITConfig)
-    i.TIM_TimeBaseInit                       0x0800100c   Section        0  stm32f4xx_tim.o(i.TIM_TimeBaseInit)
-    i.TIM_TimeBaseStructInit                 0x08001090   Section        0  stm32f4xx_tim.o(i.TIM_TimeBaseStructInit)
-    i.USART3_IRQHandler                      0x080010a4   Section        0  bl_usart.o(i.USART3_IRQHandler)
-    i.USART_ClearITPendingBit                0x080010e4   Section        0  stm32f4xx_usart.o(i.USART_ClearITPendingBit)
-    i.USART_Cmd                              0x08001102   Section        0  stm32f4xx_usart.o(i.USART_Cmd)
-    i.USART_DeInit                           0x0800111c   Section        0  stm32f4xx_usart.o(i.USART_DeInit)
-    i.USART_GetFlagStatus                    0x0800120c   Section        0  stm32f4xx_usart.o(i.USART_GetFlagStatus)
-    i.USART_GetITStatus                      0x08001226   Section        0  stm32f4xx_usart.o(i.USART_GetITStatus)
-    i.USART_ITConfig                         0x0800127a   Section        0  stm32f4xx_usart.o(i.USART_ITConfig)
-    i.USART_Init                             0x080012c4   Section        0  stm32f4xx_usart.o(i.USART_Init)
-    i.USART_ReceiveData                      0x08001398   Section        0  stm32f4xx_usart.o(i.USART_ReceiveData)
-    i.USART_SendData                         0x080013a2   Section        0  stm32f4xx_usart.o(i.USART_SendData)
-    i.USART_StructInit                       0x080013aa   Section        0  stm32f4xx_usart.o(i.USART_StructInit)
-    i.__0snprintf                            0x080013c4   Section        0  printfa.o(i.__0snprintf)
-    i.__0vsnprintf                           0x080013f8   Section        0  printfa.o(i.__0vsnprintf)
-    i.__scatterload_copy                     0x0800142c   Section       14  handlers.o(i.__scatterload_copy)
-    i.__scatterload_null                     0x0800143a   Section        2  handlers.o(i.__scatterload_null)
-    i.__scatterload_zeroinit                 0x0800143c   Section       14  handlers.o(i.__scatterload_zeroinit)
-    i._fp_digits                             0x0800144c   Section        0  printfa.o(i._fp_digits)
-    _fp_digits                               0x0800144d   Thumb Code   366  printfa.o(i._fp_digits)
-    i._printf_core                           0x080015d0   Section        0  printfa.o(i._printf_core)
-    _printf_core                             0x080015d1   Thumb Code  1704  printfa.o(i._printf_core)
-    i._printf_post_padding                   0x08001c84   Section        0  printfa.o(i._printf_post_padding)
-    _printf_post_padding                     0x08001c85   Thumb Code    36  printfa.o(i._printf_post_padding)
-    i._printf_pre_padding                    0x08001ca8   Section        0  printfa.o(i._printf_pre_padding)
-    _printf_pre_padding                      0x08001ca9   Thumb Code    46  printfa.o(i._printf_pre_padding)
-    i._snputc                                0x08001cd6   Section        0  printfa.o(i._snputc)
-    _snputc                                  0x08001cd7   Thumb Code    22  printfa.o(i._snputc)
-    i.application_validate                   0x08001cec   Section        0  bootloader.o(i.application_validate)
-    application_validate                     0x08001ced   Thumb Code   102  bootloader.o(i.application_validate)
-    i.bl_byte_handler                        0x08001dbc   Section        0  bootloader.o(i.bl_byte_handler)
-    bl_byte_handler                          0x08001dbd   Thumb Code   494  bootloader.o(i.bl_byte_handler)
-    i.bl_opcode_boot_handler                 0x08002060   Section        0  bootloader.o(i.bl_opcode_boot_handler)
-    bl_opcode_boot_handler                   0x08002061   Thumb Code    42  bootloader.o(i.bl_opcode_boot_handler)
-    i.bl_opcode_erase_handler                0x080020bc   Section        0  bootloader.o(i.bl_opcode_erase_handler)
-    bl_opcode_erase_handler                  0x080020bd   Thumb Code   226  bootloader.o(i.bl_opcode_erase_handler)
-    i.bl_opcode_inquery_handler              0x08002248   Section        0  bootloader.o(i.bl_opcode_inquery_handler)
-    bl_opcode_inquery_handler                0x08002249   Thumb Code   134  bootloader.o(i.bl_opcode_inquery_handler)
-    i.bl_opcode_program_handler              0x0800234c   Section        0  bootloader.o(i.bl_opcode_program_handler)
-    bl_opcode_program_handler                0x0800234d   Thumb Code   314  bootloader.o(i.bl_opcode_program_handler)
-    i.bl_opcode_reset_handler                0x08002588   Section        0  bootloader.o(i.bl_opcode_reset_handler)
-    bl_opcode_reset_handler                  0x08002589   Thumb Code    68  bootloader.o(i.bl_opcode_reset_handler)
-    i.bl_opcode_verify_handler               0x08002610   Section        0  bootloader.o(i.bl_opcode_verify_handler)
-    bl_opcode_verify_handler                 0x08002611   Thumb Code   228  bootloader.o(i.bl_opcode_verify_handler)
-    i.bl_packet_handler                      0x080027a8   Section        0  bootloader.o(i.bl_packet_handler)
-    bl_packet_handler                        0x080027a9   Thumb Code   104  bootloader.o(i.bl_packet_handler)
-    i.bl_response                            0x0800284c   Section        0  bootloader.o(i.bl_response)
-    bl_response                              0x0800284d   Thumb Code   110  bootloader.o(i.bl_response)
-    i.bl_usart_init                          0x080028c0   Section        0  bl_usart.o(i.bl_usart_init)
-    i.bl_usart_register_rx_callback          0x080028d0   Section        0  bl_usart.o(i.bl_usart_register_rx_callback)
-    i.bl_usart_rx_handler                    0x080028dc   Section        0  bootloader.o(i.bl_usart_rx_handler)
-    bl_usart_rx_handler                      0x080028dd   Thumb Code    20  bootloader.o(i.bl_usart_rx_handler)
-    i.bl_usart_write                         0x080028f4   Section        0  bl_usart.o(i.bl_usart_write)
-    i.board_lowlevel_init                    0x08002924   Section        0  board.o(i.board_lowlevel_init)
-    i.boot_application                       0x08002978   Section        0  bootloader.o(i.boot_application)
-    boot_application                         0x08002979   Thumb Code   114  bootloader.o(i.boot_application)
-    i.bootloader_main                        0x08002a60   Section        0  bootloader.o(i.bootloader_main)
-    i.console_init                           0x08002b80   Section        0  console.o(i.console_init)
-    i.console_io_init                        0x08002b8c   Section        0  console.o(i.console_io_init)
-    console_io_init                          0x08002b8d   Thumb Code    54  console.o(i.console_io_init)
-    i.console_usart_init                     0x08002bc8   Section        0  console.o(i.console_usart_init)
-    console_usart_init                       0x08002bc9   Thumb Code    58  console.o(i.console_usart_init)
-    i.console_write                          0x08002c08   Section        0  console.o(i.console_write)
-    i.crc16                                  0x08002c34   Section        0  crc16.o(i.crc16)
-    i.crc32                                  0x08002c60   Section        0  crc32.o(i.crc32)
-    i.elog_get_filter_tag_lvl                0x08002c94   Section        0  elog.o(i.elog_get_filter_tag_lvl)
-    i.elog_init                              0x08002da4   Section        0  elog.o(i.elog_init)
-    i.elog_output                            0x08002df0   Section        0  elog.o(i.elog_output)
-    i.elog_output_lock                       0x080031b0   Section        0  elog.o(i.elog_output_lock)
-    i.elog_output_lock_enabled               0x080031d8   Section        0  elog.o(i.elog_output_lock_enabled)
-    i.elog_output_unlock                     0x08003218   Section        0  elog.o(i.elog_output_unlock)
-    i.elog_port_get_p_info                   0x08003240   Section        0  elog_port.o(i.elog_port_get_p_info)
-    i.elog_port_get_t_info                   0x08003248   Section        0  elog_port.o(i.elog_port_get_t_info)
-    i.elog_port_get_time                     0x08003250   Section        0  elog_port.o(i.elog_port_get_time)
-    i.elog_port_init                         0x080032b4   Section        0  elog_port.o(i.elog_port_init)
-    i.elog_port_output                       0x080032b8   Section        0  elog_port.o(i.elog_port_output)
-    i.elog_port_output_lock                  0x080032c8   Section        0  elog_port.o(i.elog_port_output_lock)
-    i.elog_port_output_unlock                0x080032ca   Section        0  elog_port.o(i.elog_port_output_unlock)
-    i.elog_set_filter_lvl                    0x080032cc   Section        0  elog.o(i.elog_set_filter_lvl)
-    i.elog_set_filter_tag_lvl_default        0x0800338c   Section        0  elog.o(i.elog_set_filter_tag_lvl_default)
-    elog_set_filter_tag_lvl_default          0x0800338d   Thumb Code    54  elog.o(i.elog_set_filter_tag_lvl_default)
-    i.elog_set_fmt                           0x080033c8   Section        0  elog.o(i.elog_set_fmt)
-    i.elog_set_output_enabled                0x0800348c   Section        0  elog.o(i.elog_set_output_enabled)
-    i.elog_start                             0x08003560   Section        0  elog.o(i.elog_start)
-    i.elog_strcpy                            0x080035f0   Section        0  elog_utils.o(i.elog_strcpy)
-    i.get_fmt_enabled                        0x080036f8   Section        0  elog.o(i.get_fmt_enabled)
-    get_fmt_enabled                          0x080036f9   Thumb Code    90  elog.o(i.get_fmt_enabled)
-    i.get_fmt_used_and_enabled_ptr           0x080037c8   Section        0  elog.o(i.get_fmt_used_and_enabled_ptr)
-    get_fmt_used_and_enabled_ptr             0x080037c9   Thumb Code    28  elog.o(i.get_fmt_used_and_enabled_ptr)
-    i.get_fmt_used_and_enabled_u32           0x080037e4   Section        0  elog.o(i.get_fmt_used_and_enabled_u32)
-    get_fmt_used_and_enabled_u32             0x080037e5   Thumb Code    28  elog.o(i.get_fmt_used_and_enabled_u32)
-    i.get_u32_inc                            0x08003800   Section        0  bootloader.o(i.get_u32_inc)
-    get_u32_inc                              0x08003801   Thumb Code    16  bootloader.o(i.get_u32_inc)
-    i.key_init                               0x08003810   Section        0  key.o(i.key_init)
-    i.key_press_check                        0x0800383c   Section        0  bootloader.o(i.key_press_check)
-    key_press_check                          0x0800383d   Thumb Code    40  bootloader.o(i.key_press_check)
-    i.key_read                               0x08003868   Section        0  key.o(i.key_read)
-    i.key_trap_check                         0x08003884   Section        0  bootloader.o(i.key_trap_check)
-    key_trap_check                           0x08003885   Thumb Code    62  bootloader.o(i.key_trap_check)
-    i.led_init                               0x08003904   Section        0  led.o(i.led_init)
-    i.led_off                                0x08003940   Section        0  led.o(i.led_off)
-    i.led_on                                 0x08003952   Section        0  led.o(i.led_on)
-    i.magic_header_get_address               0x08003964   Section        0  magic_header.o(i.magic_header_get_address)
-    i.magic_header_get_crc32                 0x08003970   Section        0  magic_header.o(i.magic_header_get_crc32)
-    i.magic_header_get_length                0x0800397c   Section        0  magic_header.o(i.magic_header_get_length)
-    i.magic_header_trap_boot                 0x08003988   Section        0  bootloader.o(i.magic_header_trap_boot)
-    i.magic_header_validate                  0x08003a3c   Section        0  magic_header.o(i.magic_header_validate)
-    i.main                                   0x08003a70   Section        0  main.o(i.main)
-    i.next_head                              0x08003abe   Section        0  ringbuffer.o(i.next_head)
-    next_head                                0x08003abf   Thumb Code    24  ringbuffer.o(i.next_head)
-    i.put_u16                                0x08003ad6   Section        0  bootloader.o(i.put_u16)
-    put_u16                                  0x08003ad7   Thumb Code     4  bootloader.o(i.put_u16)
-    i.put_u16_inc                            0x08003ada   Section        0  bootloader.o(i.put_u16_inc)
-    put_u16_inc                              0x08003adb   Thumb Code    24  bootloader.o(i.put_u16_inc)
-    i.put_u8_inc                             0x08003af2   Section        0  bootloader.o(i.put_u8_inc)
-    put_u8_inc                               0x08003af3   Thumb Code    16  bootloader.o(i.put_u8_inc)
-    i.rb_empty                               0x08003b02   Section        0  ringbuffer.o(i.rb_empty)
-    i.rb_full                                0x08003b14   Section        0  ringbuffer.o(i.rb_full)
-    i.rb_get                                 0x08003b2c   Section        0  ringbuffer.o(i.rb_get)
-    i.rb_new                                 0x08003b62   Section        0  ringbuffer.o(i.rb_new)
-    i.rb_put                                 0x08003b7e   Section        0  ringbuffer.o(i.rb_put)
-    i.rb_puts                                0x08003ba2   Section        0  ringbuffer.o(i.rb_puts)
-    i.rx_trap_boot                           0x08003bc8   Section        0  bootloader.o(i.rx_trap_boot)
-    i.stm32_flash_erase                      0x08003c4c   Section        0  stm32_flash.o(i.stm32_flash_erase)
-    i.stm32_flash_lock                       0x08003d2c   Section        0  stm32_flash.o(i.stm32_flash_lock)
-    i.stm32_flash_program                    0x08003d34   Section        0  stm32_flash.o(i.stm32_flash_program)
-    i.stm32_flash_unlock                     0x08003db8   Section        0  stm32_flash.o(i.stm32_flash_unlock)
-    i.tim_delay_init                         0x08003dc0   Section        0  tim_delay.o(i.tim_delay_init)
-    i.tim_delay_ms                           0x08003e38   Section        0  tim_delay.o(i.tim_delay_ms)
-    i.tim_get_ms                             0x08003e60   Section        0  tim_delay.o(i.tim_get_ms)
-    i.tim_now                                0x08003e74   Section        0  tim_delay.o(i.tim_now)
-    i.usart_io_init                          0x08003eb0   Section        0  bl_usart.o(i.usart_io_init)
-    usart_io_init                            0x08003eb1   Thumb Code    66  bl_usart.o(i.usart_io_init)
-    i.usart_it_config                        0x08003ef8   Section        0  bl_usart.o(i.usart_it_config)
-    usart_it_config                          0x08003ef9   Thumb Code    68  bl_usart.o(i.usart_it_config)
-    i.usart_lowlevel_init                    0x08003f44   Section        0  bl_usart.o(i.usart_lowlevel_init)
-    usart_lowlevel_init                      0x08003f45   Thumb Code    70  bl_usart.o(i.usart_lowlevel_init)
-    i.wait_key_release                       0x08003f90   Section        0  bootloader.o(i.wait_key_release)
-    wait_key_release                         0x08003f91   Thumb Code    24  bootloader.o(i.wait_key_release)
-    .constdata                               0x08003fac   Section      287  bootloader.o(.constdata)
-    __FUNCTION__                             0x08003fac   Data          21  bootloader.o(.constdata)
-    __FUNCTION__                             0x08003fc1   Data          17  bootloader.o(.constdata)
-    __FUNCTION__                             0x08003fd2   Data          26  bootloader.o(.constdata)
-    __FUNCTION__                             0x08003fec   Data          24  bootloader.o(.constdata)
-    __FUNCTION__                             0x08004004   Data          26  bootloader.o(.constdata)
-    __FUNCTION__                             0x0800401e   Data          25  bootloader.o(.constdata)
-    __FUNCTION__                             0x08004037   Data          24  bootloader.o(.constdata)
-    __FUNCTION__                             0x0800404f   Data          23  bootloader.o(.constdata)
-    __FUNCTION__                             0x08004066   Data          18  bootloader.o(.constdata)
-    __FUNCTION__                             0x08004078   Data          16  bootloader.o(.constdata)
-    __FUNCTION__                             0x08004088   Data          15  bootloader.o(.constdata)
-    __FUNCTION__                             0x08004097   Data          23  bootloader.o(.constdata)
-    __FUNCTION__                             0x080040ae   Data          13  bootloader.o(.constdata)
-    __FUNCTION__                             0x080040bb   Data          16  bootloader.o(.constdata)
-    .constdata                               0x080040cc   Section      134  stm32_flash.o(.constdata)
-    sector_descs                             0x080040cc   Data          96  stm32_flash.o(.constdata)
-    __FUNCTION__                             0x0800412c   Data          18  stm32_flash.o(.constdata)
-    __FUNCTION__                             0x0800413e   Data          20  stm32_flash.o(.constdata)
-    .constdata                               0x08004152   Section      512  crc16.o(.constdata)
-    crc16tab                                 0x08004152   Data         512  crc16.o(.constdata)
-    .constdata                               0x08004354   Section     1024  crc32.o(.constdata)
-    crc32_tab                                0x08004354   Data        1024  crc32.o(.constdata)
-    .constdata                               0x08004754   Section      198  elog.o(.constdata)
-    __FUNCTION__                             0x08004754   Data          11  elog.o(.constdata)
-    __FUNCTION__                             0x0800475f   Data          10  elog.o(.constdata)
-    __FUNCTION__                             0x08004769   Data          24  elog.o(.constdata)
-    __FUNCTION__                             0x08004781   Data          13  elog.o(.constdata)
-    __FUNCTION__                             0x0800478e   Data          16  elog.o(.constdata)
-    __FUNCTION__                             0x0800479e   Data          20  elog.o(.constdata)
-    __FUNCTION__                             0x080047b2   Data          24  elog.o(.constdata)
-    __FUNCTION__                             0x080047ca   Data          24  elog.o(.constdata)
-    __FUNCTION__                             0x080047e2   Data          12  elog.o(.constdata)
-    __FUNCTION__                             0x080047ee   Data          16  elog.o(.constdata)
-    __FUNCTION__                             0x080047fe   Data          14  elog.o(.constdata)
-    __FUNCTION__                             0x0800480c   Data          14  elog.o(.constdata)
-    .constdata                               0x0800481a   Section       35  elog_utils.o(.constdata)
-    __FUNCTION__                             0x0800481a   Data          12  elog_utils.o(.constdata)
-    __FUNCTION__                             0x08004826   Data          11  elog_utils.o(.constdata)
-    __FUNCTION__                             0x08004831   Data          12  elog_utils.o(.constdata)
-    .conststring                             0x08004840   Section       23  elog.o(.conststring)
+    .text                                    0x080002a8   Section        0  memcmp.o(.text)
+    .text                                    0x080002c2   Section        0  strncmp.o(.text)
+    .text                                    0x080002e0   Section        0  uidiv.o(.text)
+    .text                                    0x0800030c   Section        0  llshl.o(.text)
+    .text                                    0x0800032a   Section        0  llushr.o(.text)
+    .text                                    0x0800034a   Section        0  iusefp.o(.text)
+    .text                                    0x0800034a   Section        0  dadd.o(.text)
+    .text                                    0x08000498   Section        0  dmul.o(.text)
+    .text                                    0x0800057c   Section        0  ddiv.o(.text)
+    .text                                    0x0800065a   Section        0  dfixul.o(.text)
+    .text                                    0x0800068c   Section       48  cdrcmple.o(.text)
+    .text                                    0x080006bc   Section       36  init.o(.text)
+    .text                                    0x080006e0   Section        0  llsshr.o(.text)
+    .text                                    0x08000704   Section        0  depilogue.o(.text)
+    i.FLASH_EraseSector                      0x080007c0   Section        0  stm32f4xx_flash.o(i.FLASH_EraseSector)
+    i.FLASH_GetStatus                        0x08000848   Section        0  stm32f4xx_flash.o(i.FLASH_GetStatus)
+    i.FLASH_Lock                             0x0800089c   Section        0  stm32f4xx_flash.o(i.FLASH_Lock)
+    i.FLASH_ProgramWord                      0x080008b0   Section        0  stm32f4xx_flash.o(i.FLASH_ProgramWord)
+    i.FLASH_Unlock                           0x08000900   Section        0  stm32f4xx_flash.o(i.FLASH_Unlock)
+    i.FLASH_WaitForLastOperation             0x08000924   Section        0  stm32f4xx_flash.o(i.FLASH_WaitForLastOperation)
+    i.GPIO_Init                              0x08000946   Section        0  stm32f4xx_gpio.o(i.GPIO_Init)
+    i.GPIO_PinAFConfig                       0x080009d6   Section        0  stm32f4xx_gpio.o(i.GPIO_PinAFConfig)
+    i.GPIO_ReadInputDataBit                  0x08000a1c   Section        0  stm32f4xx_gpio.o(i.GPIO_ReadInputDataBit)
+    i.GPIO_StructInit                        0x08000a2e   Section        0  stm32f4xx_gpio.o(i.GPIO_StructInit)
+    i.GPIO_WriteBit                          0x08000a40   Section        0  stm32f4xx_gpio.o(i.GPIO_WriteBit)
+    i.NVIC_DisableIRQ                        0x08000a4c   Section        0  bootloader.o(i.NVIC_DisableIRQ)
+    NVIC_DisableIRQ                          0x08000a4d   Thumb Code    18  bootloader.o(i.NVIC_DisableIRQ)
+    i.NVIC_Init                              0x08000a64   Section        0  misc.o(i.NVIC_Init)
+    i.NVIC_SystemReset                       0x08000adc   Section        0  bootloader.o(i.NVIC_SystemReset)
+    NVIC_SystemReset                         0x08000add   Thumb Code    56  bootloader.o(i.NVIC_SystemReset)
+    i.RCC_AHB1PeriphClockCmd                 0x08000b1c   Section        0  stm32f4xx_rcc.o(i.RCC_AHB1PeriphClockCmd)
+    i.RCC_APB1PeriphClockCmd                 0x08000b3c   Section        0  stm32f4xx_rcc.o(i.RCC_APB1PeriphClockCmd)
+    i.RCC_APB1PeriphResetCmd                 0x08000b5c   Section        0  stm32f4xx_rcc.o(i.RCC_APB1PeriphResetCmd)
+    i.RCC_APB2PeriphClockCmd                 0x08000b7c   Section        0  stm32f4xx_rcc.o(i.RCC_APB2PeriphClockCmd)
+    i.RCC_APB2PeriphResetCmd                 0x08000b9c   Section        0  stm32f4xx_rcc.o(i.RCC_APB2PeriphResetCmd)
+    i.RCC_GetClocksFreq                      0x08000bbc   Section        0  stm32f4xx_rcc.o(i.RCC_GetClocksFreq)
+    i.SetSysClock                            0x08000ca4   Section        0  system_stm32f4xx.o(i.SetSysClock)
+    SetSysClock                              0x08000ca5   Thumb Code   220  system_stm32f4xx.o(i.SetSysClock)
+    i.SystemInit                             0x08000d90   Section        0  system_stm32f4xx.o(i.SystemInit)
+    i.TIM6_DAC_IRQHandler                    0x08000df8   Section        0  tim_delay.o(i.TIM6_DAC_IRQHandler)
+    i.TIM_ClearITPendingBit                  0x08000e3c   Section        0  stm32f4xx_tim.o(i.TIM_ClearITPendingBit)
+    i.TIM_Cmd                                0x08000e42   Section        0  stm32f4xx_tim.o(i.TIM_Cmd)
+    i.TIM_DeInit                             0x08000e5c   Section        0  stm32f4xx_tim.o(i.TIM_DeInit)
+    i.TIM_GetCounter                         0x08000fec   Section        0  stm32f4xx_tim.o(i.TIM_GetCounter)
+    i.TIM_GetITStatus                        0x08000ff2   Section        0  stm32f4xx_tim.o(i.TIM_GetITStatus)
+    i.TIM_ITConfig                           0x08001014   Section        0  stm32f4xx_tim.o(i.TIM_ITConfig)
+    i.TIM_TimeBaseInit                       0x08001028   Section        0  stm32f4xx_tim.o(i.TIM_TimeBaseInit)
+    i.TIM_TimeBaseStructInit                 0x080010ac   Section        0  stm32f4xx_tim.o(i.TIM_TimeBaseStructInit)
+    i.USART3_IRQHandler                      0x080010c0   Section        0  bl_usart.o(i.USART3_IRQHandler)
+    i.USART_ClearITPendingBit                0x08001100   Section        0  stm32f4xx_usart.o(i.USART_ClearITPendingBit)
+    i.USART_Cmd                              0x0800111e   Section        0  stm32f4xx_usart.o(i.USART_Cmd)
+    i.USART_DeInit                           0x08001138   Section        0  stm32f4xx_usart.o(i.USART_DeInit)
+    i.USART_GetFlagStatus                    0x08001228   Section        0  stm32f4xx_usart.o(i.USART_GetFlagStatus)
+    i.USART_GetITStatus                      0x08001242   Section        0  stm32f4xx_usart.o(i.USART_GetITStatus)
+    i.USART_ITConfig                         0x08001296   Section        0  stm32f4xx_usart.o(i.USART_ITConfig)
+    i.USART_Init                             0x080012e0   Section        0  stm32f4xx_usart.o(i.USART_Init)
+    i.USART_ReceiveData                      0x080013b4   Section        0  stm32f4xx_usart.o(i.USART_ReceiveData)
+    i.USART_SendData                         0x080013be   Section        0  stm32f4xx_usart.o(i.USART_SendData)
+    i.USART_StructInit                       0x080013c6   Section        0  stm32f4xx_usart.o(i.USART_StructInit)
+    i.__0snprintf                            0x080013e0   Section        0  printfa.o(i.__0snprintf)
+    i.__0vsnprintf                           0x08001414   Section        0  printfa.o(i.__0vsnprintf)
+    i.__scatterload_copy                     0x08001448   Section       14  handlers.o(i.__scatterload_copy)
+    i.__scatterload_null                     0x08001456   Section        2  handlers.o(i.__scatterload_null)
+    i.__scatterload_zeroinit                 0x08001458   Section       14  handlers.o(i.__scatterload_zeroinit)
+    i._fp_digits                             0x08001468   Section        0  printfa.o(i._fp_digits)
+    _fp_digits                               0x08001469   Thumb Code   366  printfa.o(i._fp_digits)
+    i._printf_core                           0x080015ec   Section        0  printfa.o(i._printf_core)
+    _printf_core                             0x080015ed   Thumb Code  1704  printfa.o(i._printf_core)
+    i._printf_post_padding                   0x08001ca0   Section        0  printfa.o(i._printf_post_padding)
+    _printf_post_padding                     0x08001ca1   Thumb Code    36  printfa.o(i._printf_post_padding)
+    i._printf_pre_padding                    0x08001cc4   Section        0  printfa.o(i._printf_pre_padding)
+    _printf_pre_padding                      0x08001cc5   Thumb Code    46  printfa.o(i._printf_pre_padding)
+    i._snputc                                0x08001cf2   Section        0  printfa.o(i._snputc)
+    _snputc                                  0x08001cf3   Thumb Code    22  printfa.o(i._snputc)
+    i.application_validate_partition         0x08001d08   Section        0  bootloader.o(i.application_validate_partition)
+    application_validate_partition           0x08001d09   Thumb Code   116  bootloader.o(i.application_validate_partition)
+    i.bl_byte_handler                        0x08001df8   Section        0  bootloader.o(i.bl_byte_handler)
+    bl_byte_handler                          0x08001df9   Thumb Code   522  bootloader.o(i.bl_byte_handler)
+    i.bl_opcode_boot_handler                 0x080020b8   Section        0  bootloader.o(i.bl_opcode_boot_handler)
+    bl_opcode_boot_handler                   0x080020b9   Thumb Code    42  bootloader.o(i.bl_opcode_boot_handler)
+    i.bl_opcode_commit_handler               0x08002114   Section        0  bootloader.o(i.bl_opcode_commit_handler)
+    bl_opcode_commit_handler                 0x08002115   Thumb Code   196  bootloader.o(i.bl_opcode_commit_handler)
+    i.bl_opcode_erase_handler                0x08002270   Section        0  bootloader.o(i.bl_opcode_erase_handler)
+    bl_opcode_erase_handler                  0x08002271   Thumb Code   318  bootloader.o(i.bl_opcode_erase_handler)
+    i.bl_opcode_get_status_handler           0x080024bc   Section        0  bootloader.o(i.bl_opcode_get_status_handler)
+    bl_opcode_get_status_handler             0x080024bd   Thumb Code   112  bootloader.o(i.bl_opcode_get_status_handler)
+    i.bl_opcode_inquery_handler              0x08002564   Section        0  bootloader.o(i.bl_opcode_inquery_handler)
+    bl_opcode_inquery_handler                0x08002565   Thumb Code   134  bootloader.o(i.bl_opcode_inquery_handler)
+    i.bl_opcode_program_handler              0x08002668   Section        0  bootloader.o(i.bl_opcode_program_handler)
+    bl_opcode_program_handler                0x08002669   Thumb Code   438  bootloader.o(i.bl_opcode_program_handler)
+    i.bl_opcode_reset_handler                0x08002974   Section        0  bootloader.o(i.bl_opcode_reset_handler)
+    bl_opcode_reset_handler                  0x08002975   Thumb Code    68  bootloader.o(i.bl_opcode_reset_handler)
+    i.bl_opcode_rollback_handler             0x080029fc   Section        0  bootloader.o(i.bl_opcode_rollback_handler)
+    bl_opcode_rollback_handler               0x080029fd   Thumb Code   188  bootloader.o(i.bl_opcode_rollback_handler)
+    i.bl_opcode_start_upgrade_handler        0x08002b4c   Section        0  bootloader.o(i.bl_opcode_start_upgrade_handler)
+    bl_opcode_start_upgrade_handler          0x08002b4d   Thumb Code   198  bootloader.o(i.bl_opcode_start_upgrade_handler)
+    i.bl_opcode_verify_handler               0x08002cb8   Section        0  bootloader.o(i.bl_opcode_verify_handler)
+    bl_opcode_verify_handler                 0x08002cb9   Thumb Code   354  bootloader.o(i.bl_opcode_verify_handler)
+    i.bl_packet_handler                      0x08002f0c   Section        0  bootloader.o(i.bl_packet_handler)
+    bl_packet_handler                        0x08002f0d   Thumb Code   148  bootloader.o(i.bl_packet_handler)
+    i.bl_response                            0x08002fdc   Section        0  bootloader.o(i.bl_response)
+    bl_response                              0x08002fdd   Thumb Code   110  bootloader.o(i.bl_response)
+    i.bl_usart_init                          0x08003050   Section        0  bl_usart.o(i.bl_usart_init)
+    i.bl_usart_register_rx_callback          0x08003060   Section        0  bl_usart.o(i.bl_usart_register_rx_callback)
+    i.bl_usart_rx_handler                    0x0800306c   Section        0  bootloader.o(i.bl_usart_rx_handler)
+    bl_usart_rx_handler                      0x0800306d   Thumb Code    20  bootloader.o(i.bl_usart_rx_handler)
+    i.bl_usart_write                         0x08003084   Section        0  bl_usart.o(i.bl_usart_write)
+    i.board_lowlevel_init                    0x080030b4   Section        0  board.o(i.board_lowlevel_init)
+    i.boot_application                       0x08003108   Section        0  bootloader.o(i.boot_application)
+    boot_application                         0x08003109   Thumb Code    16  bootloader.o(i.boot_application)
+    i.boot_application_partition             0x0800311c   Section        0  bootloader.o(i.boot_application_partition)
+    boot_application_partition               0x0800311d   Thumb Code   184  bootloader.o(i.boot_application_partition)
+    i.boot_config_calc_crc32                 0x080032c8   Section        0  boot_config.o(i.boot_config_calc_crc32)
+    boot_config_calc_crc32                   0x080032c9   Thumb Code    20  boot_config.o(i.boot_config_calc_crc32)
+    i.boot_config_get_active_partition       0x080032dc   Section        0  boot_config.o(i.boot_config_get_active_partition)
+    i.boot_config_get_upgrade_state          0x080032e8   Section        0  boot_config.o(i.boot_config_get_upgrade_state)
+    i.boot_config_init_default               0x080032f4   Section        0  boot_config.o(i.boot_config_init_default)
+    i.boot_config_is_partition_valid         0x080033a8   Section        0  boot_config.o(i.boot_config_is_partition_valid)
+    i.boot_config_load                       0x080033d4   Section        0  boot_config.o(i.boot_config_load)
+    i.boot_config_save                       0x080034e0   Section        0  boot_config.o(i.boot_config_save)
+    i.boot_config_set_active_partition       0x080035f8   Section        0  boot_config.o(i.boot_config_set_active_partition)
+    i.boot_config_set_partition_valid        0x080036c0   Section        0  boot_config.o(i.boot_config_set_partition_valid)
+    i.boot_config_set_upgrade_state          0x0800375c   Section        0  boot_config.o(i.boot_config_set_upgrade_state)
+    i.boot_config_validate                   0x080037f0   Section        0  boot_config.o(i.boot_config_validate)
+    i.bootloader_main                        0x08003964   Section        0  bootloader.o(i.bootloader_main)
+    i.console_init                           0x08003c3c   Section        0  console.o(i.console_init)
+    i.console_io_init                        0x08003c48   Section        0  console.o(i.console_io_init)
+    console_io_init                          0x08003c49   Thumb Code    54  console.o(i.console_io_init)
+    i.console_usart_init                     0x08003c84   Section        0  console.o(i.console_usart_init)
+    console_usart_init                       0x08003c85   Thumb Code    58  console.o(i.console_usart_init)
+    i.console_write                          0x08003cc4   Section        0  console.o(i.console_write)
+    i.crc16                                  0x08003cf0   Section        0  crc16.o(i.crc16)
+    i.crc32                                  0x08003d1c   Section        0  crc32.o(i.crc32)
+    i.elog_get_filter_tag_lvl                0x08003d50   Section        0  elog.o(i.elog_get_filter_tag_lvl)
+    i.elog_init                              0x08003e60   Section        0  elog.o(i.elog_init)
+    i.elog_output                            0x08003eac   Section        0  elog.o(i.elog_output)
+    i.elog_output_lock                       0x0800426c   Section        0  elog.o(i.elog_output_lock)
+    i.elog_output_lock_enabled               0x08004294   Section        0  elog.o(i.elog_output_lock_enabled)
+    i.elog_output_unlock                     0x080042d4   Section        0  elog.o(i.elog_output_unlock)
+    i.elog_port_get_p_info                   0x080042fc   Section        0  elog_port.o(i.elog_port_get_p_info)
+    i.elog_port_get_t_info                   0x08004304   Section        0  elog_port.o(i.elog_port_get_t_info)
+    i.elog_port_get_time                     0x0800430c   Section        0  elog_port.o(i.elog_port_get_time)
+    i.elog_port_init                         0x08004370   Section        0  elog_port.o(i.elog_port_init)
+    i.elog_port_output                       0x08004374   Section        0  elog_port.o(i.elog_port_output)
+    i.elog_port_output_lock                  0x08004384   Section        0  elog_port.o(i.elog_port_output_lock)
+    i.elog_port_output_unlock                0x08004386   Section        0  elog_port.o(i.elog_port_output_unlock)
+    i.elog_set_filter_lvl                    0x08004388   Section        0  elog.o(i.elog_set_filter_lvl)
+    i.elog_set_filter_tag_lvl_default        0x08004448   Section        0  elog.o(i.elog_set_filter_tag_lvl_default)
+    elog_set_filter_tag_lvl_default          0x08004449   Thumb Code    54  elog.o(i.elog_set_filter_tag_lvl_default)
+    i.elog_set_fmt                           0x08004484   Section        0  elog.o(i.elog_set_fmt)
+    i.elog_set_output_enabled                0x08004548   Section        0  elog.o(i.elog_set_output_enabled)
+    i.elog_start                             0x0800461c   Section        0  elog.o(i.elog_start)
+    i.elog_strcpy                            0x080046ac   Section        0  elog_utils.o(i.elog_strcpy)
+    i.get_fmt_enabled                        0x080047b4   Section        0  elog.o(i.get_fmt_enabled)
+    get_fmt_enabled                          0x080047b5   Thumb Code    90  elog.o(i.get_fmt_enabled)
+    i.get_fmt_used_and_enabled_ptr           0x08004884   Section        0  elog.o(i.get_fmt_used_and_enabled_ptr)
+    get_fmt_used_and_enabled_ptr             0x08004885   Thumb Code    28  elog.o(i.get_fmt_used_and_enabled_ptr)
+    i.get_fmt_used_and_enabled_u32           0x080048a0   Section        0  elog.o(i.get_fmt_used_and_enabled_u32)
+    get_fmt_used_and_enabled_u32             0x080048a1   Thumb Code    28  elog.o(i.get_fmt_used_and_enabled_u32)
+    i.get_u32_inc                            0x080048bc   Section        0  bootloader.o(i.get_u32_inc)
+    get_u32_inc                              0x080048bd   Thumb Code    16  bootloader.o(i.get_u32_inc)
+    i.key_init                               0x080048cc   Section        0  key.o(i.key_init)
+    i.key_press_check                        0x080048f8   Section        0  bootloader.o(i.key_press_check)
+    key_press_check                          0x080048f9   Thumb Code    40  bootloader.o(i.key_press_check)
+    i.key_read                               0x08004924   Section        0  key.o(i.key_read)
+    i.key_trap_check                         0x08004940   Section        0  bootloader.o(i.key_trap_check)
+    key_trap_check                           0x08004941   Thumb Code    60  bootloader.o(i.key_trap_check)
+    i.led_init                               0x080049bc   Section        0  led.o(i.led_init)
+    i.led_off                                0x080049f8   Section        0  led.o(i.led_off)
+    i.led_on                                 0x08004a0a   Section        0  led.o(i.led_on)
+    i.magic_header_get_address_partition     0x08004a1c   Section        0  magic_header.o(i.magic_header_get_address_partition)
+    i.magic_header_get_crc32_partition       0x08004a38   Section        0  magic_header.o(i.magic_header_get_crc32_partition)
+    i.magic_header_get_length_partition      0x08004a54   Section        0  magic_header.o(i.magic_header_get_length_partition)
+    i.magic_header_trap_boot                 0x08004a70   Section        0  bootloader.o(i.magic_header_trap_boot)
+    i.magic_header_validate_partition        0x08004b64   Section        0  magic_header.o(i.magic_header_validate_partition)
+    i.main                                   0x08004bb4   Section        0  main.o(i.main)
+    i.next_head                              0x08004c02   Section        0  ringbuffer.o(i.next_head)
+    next_head                                0x08004c03   Thumb Code    24  ringbuffer.o(i.next_head)
+    i.partition_get_address                  0x08004c1c   Section        0  partition.o(i.partition_get_address)
+    i.partition_get_download_target          0x08004c8c   Section        0  partition.o(i.partition_get_download_target)
+    i.partition_get_opposite                 0x08004ca6   Section        0  partition.o(i.partition_get_opposite)
+    i.partition_get_size                     0x08004cb4   Section        0  partition.o(i.partition_get_size)
+    i.put_u16                                0x08004d20   Section        0  bootloader.o(i.put_u16)
+    put_u16                                  0x08004d21   Thumb Code     4  bootloader.o(i.put_u16)
+    i.put_u16_inc                            0x08004d24   Section        0  bootloader.o(i.put_u16_inc)
+    put_u16_inc                              0x08004d25   Thumb Code    24  bootloader.o(i.put_u16_inc)
+    i.put_u8_inc                             0x08004d3c   Section        0  bootloader.o(i.put_u8_inc)
+    put_u8_inc                               0x08004d3d   Thumb Code    16  bootloader.o(i.put_u8_inc)
+    i.rb_empty                               0x08004d4c   Section        0  ringbuffer.o(i.rb_empty)
+    i.rb_full                                0x08004d5e   Section        0  ringbuffer.o(i.rb_full)
+    i.rb_get                                 0x08004d76   Section        0  ringbuffer.o(i.rb_get)
+    i.rb_new                                 0x08004dac   Section        0  ringbuffer.o(i.rb_new)
+    i.rb_put                                 0x08004dc8   Section        0  ringbuffer.o(i.rb_put)
+    i.rb_puts                                0x08004dec   Section        0  ringbuffer.o(i.rb_puts)
+    i.rx_trap_boot                           0x08004e14   Section        0  bootloader.o(i.rx_trap_boot)
+    i.stm32_flash_erase                      0x08004e98   Section        0  stm32_flash.o(i.stm32_flash_erase)
+    i.stm32_flash_lock                       0x08004f80   Section        0  stm32_flash.o(i.stm32_flash_lock)
+    i.stm32_flash_program                    0x08004f88   Section        0  stm32_flash.o(i.stm32_flash_program)
+    i.stm32_flash_unlock                     0x0800500c   Section        0  stm32_flash.o(i.stm32_flash_unlock)
+    i.tim_delay_init                         0x08005014   Section        0  tim_delay.o(i.tim_delay_init)
+    i.tim_delay_ms                           0x0800508c   Section        0  tim_delay.o(i.tim_delay_ms)
+    i.tim_get_ms                             0x080050b4   Section        0  tim_delay.o(i.tim_get_ms)
+    i.tim_now                                0x080050c8   Section        0  tim_delay.o(i.tim_now)
+    i.usart_io_init                          0x08005104   Section        0  bl_usart.o(i.usart_io_init)
+    usart_io_init                            0x08005105   Thumb Code    66  bl_usart.o(i.usart_io_init)
+    i.usart_it_config                        0x0800514c   Section        0  bl_usart.o(i.usart_it_config)
+    usart_it_config                          0x0800514d   Thumb Code    68  bl_usart.o(i.usart_it_config)
+    i.usart_lowlevel_init                    0x08005198   Section        0  bl_usart.o(i.usart_lowlevel_init)
+    usart_lowlevel_init                      0x08005199   Thumb Code    70  bl_usart.o(i.usart_lowlevel_init)
+    i.wait_key_release                       0x080051e4   Section        0  bootloader.o(i.wait_key_release)
+    wait_key_release                         0x080051e5   Thumb Code    24  bootloader.o(i.wait_key_release)
+    .constdata                               0x08005200   Section      420  bootloader.o(.constdata)
+    __FUNCTION__                             0x08005200   Data          31  bootloader.o(.constdata)
+    __FUNCTION__                             0x0800521f   Data          27  bootloader.o(.constdata)
+    __FUNCTION__                             0x0800523a   Data          26  bootloader.o(.constdata)
+    __FUNCTION__                             0x08005254   Data          24  bootloader.o(.constdata)
+    __FUNCTION__                             0x0800526c   Data          26  bootloader.o(.constdata)
+    __FUNCTION__                             0x08005286   Data          25  bootloader.o(.constdata)
+    __FUNCTION__                             0x0800529f   Data          24  bootloader.o(.constdata)
+    __FUNCTION__                             0x080052b7   Data          23  bootloader.o(.constdata)
+    __FUNCTION__                             0x080052ce   Data          32  bootloader.o(.constdata)
+    __FUNCTION__                             0x080052ee   Data          25  bootloader.o(.constdata)
+    __FUNCTION__                             0x08005307   Data          29  bootloader.o(.constdata)
+    __FUNCTION__                             0x08005324   Data          27  bootloader.o(.constdata)
+    __FUNCTION__                             0x0800533f   Data          18  bootloader.o(.constdata)
+    __FUNCTION__                             0x08005351   Data          16  bootloader.o(.constdata)
+    __FUNCTION__                             0x08005361   Data          15  bootloader.o(.constdata)
+    __FUNCTION__                             0x08005370   Data          23  bootloader.o(.constdata)
+    __FUNCTION__                             0x08005387   Data          13  bootloader.o(.constdata)
+    __FUNCTION__                             0x08005394   Data          16  bootloader.o(.constdata)
+    .constdata                               0x080053a4   Section      175  boot_config.o(.constdata)
+    __FUNCTION__                             0x080053a4   Data          21  boot_config.o(.constdata)
+    __FUNCTION__                             0x080053b9   Data          17  boot_config.o(.constdata)
+    __FUNCTION__                             0x080053ca   Data          17  boot_config.o(.constdata)
+    __FUNCTION__                             0x080053db   Data          25  boot_config.o(.constdata)
+    __FUNCTION__                             0x080053f4   Data          33  boot_config.o(.constdata)
+    __FUNCTION__                             0x08005415   Data          32  boot_config.o(.constdata)
+    __FUNCTION__                             0x08005435   Data          30  boot_config.o(.constdata)
+    .constdata                               0x08005453   Section      123  partition.o(.constdata)
+    __FUNCTION__                             0x08005453   Data          22  partition.o(.constdata)
+    __FUNCTION__                             0x08005469   Data          19  partition.o(.constdata)
+    __FUNCTION__                             0x0800547c   Data          19  partition.o(.constdata)
+    __FUNCTION__                             0x0800548f   Data          25  partition.o(.constdata)
+    __FUNCTION__                             0x080054a8   Data          16  partition.o(.constdata)
+    __FUNCTION__                             0x080054b8   Data          22  partition.o(.constdata)
+    .constdata                               0x080054d0   Section      134  stm32_flash.o(.constdata)
+    sector_descs                             0x080054d0   Data          96  stm32_flash.o(.constdata)
+    __FUNCTION__                             0x08005530   Data          18  stm32_flash.o(.constdata)
+    __FUNCTION__                             0x08005542   Data          20  stm32_flash.o(.constdata)
+    .constdata                               0x08005556   Section      512  crc16.o(.constdata)
+    crc16tab                                 0x08005556   Data         512  crc16.o(.constdata)
+    .constdata                               0x08005758   Section     1024  crc32.o(.constdata)
+    crc32_tab                                0x08005758   Data        1024  crc32.o(.constdata)
+    .constdata                               0x08005b58   Section      198  elog.o(.constdata)
+    __FUNCTION__                             0x08005b58   Data          11  elog.o(.constdata)
+    __FUNCTION__                             0x08005b63   Data          10  elog.o(.constdata)
+    __FUNCTION__                             0x08005b6d   Data          24  elog.o(.constdata)
+    __FUNCTION__                             0x08005b85   Data          13  elog.o(.constdata)
+    __FUNCTION__                             0x08005b92   Data          16  elog.o(.constdata)
+    __FUNCTION__                             0x08005ba2   Data          20  elog.o(.constdata)
+    __FUNCTION__                             0x08005bb6   Data          24  elog.o(.constdata)
+    __FUNCTION__                             0x08005bce   Data          24  elog.o(.constdata)
+    __FUNCTION__                             0x08005be6   Data          12  elog.o(.constdata)
+    __FUNCTION__                             0x08005bf2   Data          16  elog.o(.constdata)
+    __FUNCTION__                             0x08005c02   Data          14  elog.o(.constdata)
+    __FUNCTION__                             0x08005c10   Data          14  elog.o(.constdata)
+    .constdata                               0x08005c1e   Section       35  elog_utils.o(.constdata)
+    __FUNCTION__                             0x08005c1e   Data          12  elog_utils.o(.constdata)
+    __FUNCTION__                             0x08005c2a   Data          11  elog_utils.o(.constdata)
+    __FUNCTION__                             0x08005c35   Data          12  elog_utils.o(.constdata)
+    .conststring                             0x08005c44   Section       23  elog.o(.conststring)
     .data                                    0x20000000   Section       84  board.o(.data)
     _led1                                    0x20000000   Data          12  board.o(.data)
     _led2                                    0x2000000c   Data          12  board.o(.data)
@@ -2119,15 +2305,16 @@ Image Symbol Table
     APBAHBPrescTable                         0x20000084   Data          16  stm32f4xx_rcc.o(.data)
     .data                                    0x20000094   Section       28  elog.o(.data)
     level_output_info                        0x20000094   Data          24  elog.o(.data)
-    .bss                                     0x200000b0   Section     9230  bootloader.o(.bss)
+    .bss                                     0x200000b0   Section     9486  bootloader.o(.bss)
     rb_buffer                                0x200000b0   Data        5120  bootloader.o(.bss)
-    packet_buffer                            0x200014b0   Data        4110  bootloader.o(.bss)
-    .bss                                     0x200024c0   Section     1272  elog.o(.bss)
-    elog                                     0x200024c0   Data         248  elog.o(.bss)
-    log_buf                                  0x200025b8   Data        1024  elog.o(.bss)
-    .bss                                     0x200029b8   Section       16  elog_port.o(.bss)
-    time_str                                 0x200029b8   Data          16  elog_port.o(.bss)
-    STACK                                    0x200029c8   Section     1024  startup_stm32f40_41xxx.o(STACK)
+    boot_config                              0x200014b0   Data         256  bootloader.o(.bss)
+    packet_buffer                            0x200015b0   Data        4110  bootloader.o(.bss)
+    .bss                                     0x200025c0   Section     1272  elog.o(.bss)
+    elog                                     0x200025c0   Data         248  elog.o(.bss)
+    log_buf                                  0x200026b8   Data        1024  elog.o(.bss)
+    .bss                                     0x20002ab8   Section       16  elog_port.o(.bss)
+    time_str                                 0x20002ab8   Data          16  elog_port.o(.bss)
+    STACK                                    0x20002ac8   Section     1024  startup_stm32f40_41xxx.o(STACK)
 
     Global Symbols
 
@@ -2299,134 +2486,149 @@ Image Symbol Table
     _memset$wrapper                          0x08000265   Thumb Code    18  memseta.o(.text)
     strstr                                   0x08000277   Thumb Code    36  strstr.o(.text)
     strlen                                   0x0800029b   Thumb Code    14  strlen.o(.text)
-    strncmp                                  0x080002a9   Thumb Code    30  strncmp.o(.text)
-    __aeabi_uidiv                            0x080002c7   Thumb Code     0  uidiv.o(.text)
-    __aeabi_uidivmod                         0x080002c7   Thumb Code    44  uidiv.o(.text)
-    __aeabi_llsl                             0x080002f3   Thumb Code    30  llshl.o(.text)
-    _ll_shift_l                              0x080002f3   Thumb Code     0  llshl.o(.text)
-    __aeabi_llsr                             0x08000311   Thumb Code    32  llushr.o(.text)
-    _ll_ushift_r                             0x08000311   Thumb Code     0  llushr.o(.text)
-    __I$use$fp                               0x08000331   Thumb Code     0  iusefp.o(.text)
-    __aeabi_dadd                             0x08000331   Thumb Code   322  dadd.o(.text)
-    __aeabi_dsub                             0x08000473   Thumb Code     6  dadd.o(.text)
-    __aeabi_drsub                            0x08000479   Thumb Code     6  dadd.o(.text)
-    __aeabi_dmul                             0x0800047f   Thumb Code   228  dmul.o(.text)
-    __aeabi_ddiv                             0x08000563   Thumb Code   222  ddiv.o(.text)
-    __aeabi_d2ulz                            0x08000641   Thumb Code    48  dfixul.o(.text)
-    __aeabi_cdrcmple                         0x08000671   Thumb Code    48  cdrcmple.o(.text)
-    __scatterload                            0x080006a1   Thumb Code    28  init.o(.text)
-    __scatterload_rt2                        0x080006a1   Thumb Code     0  init.o(.text)
-    __aeabi_lasr                             0x080006c5   Thumb Code    36  llsshr.o(.text)
-    _ll_sshift_r                             0x080006c5   Thumb Code     0  llsshr.o(.text)
-    _double_round                            0x080006e9   Thumb Code    30  depilogue.o(.text)
-    _double_epilogue                         0x08000707   Thumb Code   156  depilogue.o(.text)
-    FLASH_EraseSector                        0x080007a5   Thumb Code   130  stm32f4xx_flash.o(i.FLASH_EraseSector)
-    FLASH_GetStatus                          0x0800082d   Thumb Code    80  stm32f4xx_flash.o(i.FLASH_GetStatus)
-    FLASH_Lock                               0x08000881   Thumb Code    14  stm32f4xx_flash.o(i.FLASH_Lock)
-    FLASH_ProgramWord                        0x08000895   Thumb Code    74  stm32f4xx_flash.o(i.FLASH_ProgramWord)
-    FLASH_Unlock                             0x080008e5   Thumb Code    24  stm32f4xx_flash.o(i.FLASH_Unlock)
-    FLASH_WaitForLastOperation               0x08000909   Thumb Code    34  stm32f4xx_flash.o(i.FLASH_WaitForLastOperation)
-    GPIO_Init                                0x0800092b   Thumb Code   144  stm32f4xx_gpio.o(i.GPIO_Init)
-    GPIO_PinAFConfig                         0x080009bb   Thumb Code    70  stm32f4xx_gpio.o(i.GPIO_PinAFConfig)
-    GPIO_ReadInputDataBit                    0x08000a01   Thumb Code    18  stm32f4xx_gpio.o(i.GPIO_ReadInputDataBit)
-    GPIO_StructInit                          0x08000a13   Thumb Code    18  stm32f4xx_gpio.o(i.GPIO_StructInit)
-    GPIO_WriteBit                            0x08000a25   Thumb Code    12  stm32f4xx_gpio.o(i.GPIO_WriteBit)
-    NVIC_Init                                0x08000a49   Thumb Code   106  misc.o(i.NVIC_Init)
-    RCC_AHB1PeriphClockCmd                   0x08000b01   Thumb Code    26  stm32f4xx_rcc.o(i.RCC_AHB1PeriphClockCmd)
-    RCC_APB1PeriphClockCmd                   0x08000b21   Thumb Code    26  stm32f4xx_rcc.o(i.RCC_APB1PeriphClockCmd)
-    RCC_APB1PeriphResetCmd                   0x08000b41   Thumb Code    26  stm32f4xx_rcc.o(i.RCC_APB1PeriphResetCmd)
-    RCC_APB2PeriphClockCmd                   0x08000b61   Thumb Code    26  stm32f4xx_rcc.o(i.RCC_APB2PeriphClockCmd)
-    RCC_APB2PeriphResetCmd                   0x08000b81   Thumb Code    26  stm32f4xx_rcc.o(i.RCC_APB2PeriphResetCmd)
-    RCC_GetClocksFreq                        0x08000ba1   Thumb Code   214  stm32f4xx_rcc.o(i.RCC_GetClocksFreq)
-    SystemInit                               0x08000d75   Thumb Code    88  system_stm32f4xx.o(i.SystemInit)
-    TIM6_DAC_IRQHandler                      0x08000ddd   Thumb Code    56  tim_delay.o(i.TIM6_DAC_IRQHandler)
-    TIM_ClearITPendingBit                    0x08000e21   Thumb Code     6  stm32f4xx_tim.o(i.TIM_ClearITPendingBit)
-    TIM_Cmd                                  0x08000e27   Thumb Code    24  stm32f4xx_tim.o(i.TIM_Cmd)
-    TIM_DeInit                               0x08000e41   Thumb Code   346  stm32f4xx_tim.o(i.TIM_DeInit)
-    TIM_GetCounter                           0x08000fd1   Thumb Code     6  stm32f4xx_tim.o(i.TIM_GetCounter)
-    TIM_GetITStatus                          0x08000fd7   Thumb Code    34  stm32f4xx_tim.o(i.TIM_GetITStatus)
-    TIM_ITConfig                             0x08000ff9   Thumb Code    18  stm32f4xx_tim.o(i.TIM_ITConfig)
-    TIM_TimeBaseInit                         0x0800100d   Thumb Code   104  stm32f4xx_tim.o(i.TIM_TimeBaseInit)
-    TIM_TimeBaseStructInit                   0x08001091   Thumb Code    18  stm32f4xx_tim.o(i.TIM_TimeBaseStructInit)
-    USART3_IRQHandler                        0x080010a5   Thumb Code    54  bl_usart.o(i.USART3_IRQHandler)
-    USART_ClearITPendingBit                  0x080010e5   Thumb Code    30  stm32f4xx_usart.o(i.USART_ClearITPendingBit)
-    USART_Cmd                                0x08001103   Thumb Code    24  stm32f4xx_usart.o(i.USART_Cmd)
-    USART_DeInit                             0x0800111d   Thumb Code   206  stm32f4xx_usart.o(i.USART_DeInit)
-    USART_GetFlagStatus                      0x0800120d   Thumb Code    26  stm32f4xx_usart.o(i.USART_GetFlagStatus)
-    USART_GetITStatus                        0x08001227   Thumb Code    84  stm32f4xx_usart.o(i.USART_GetITStatus)
-    USART_ITConfig                           0x0800127b   Thumb Code    74  stm32f4xx_usart.o(i.USART_ITConfig)
-    USART_Init                               0x080012c5   Thumb Code   204  stm32f4xx_usart.o(i.USART_Init)
-    USART_ReceiveData                        0x08001399   Thumb Code    10  stm32f4xx_usart.o(i.USART_ReceiveData)
-    USART_SendData                           0x080013a3   Thumb Code     8  stm32f4xx_usart.o(i.USART_SendData)
-    USART_StructInit                         0x080013ab   Thumb Code    24  stm32f4xx_usart.o(i.USART_StructInit)
-    __0snprintf                              0x080013c5   Thumb Code    48  printfa.o(i.__0snprintf)
-    __1snprintf                              0x080013c5   Thumb Code     0  printfa.o(i.__0snprintf)
-    __2snprintf                              0x080013c5   Thumb Code     0  printfa.o(i.__0snprintf)
-    __c89snprintf                            0x080013c5   Thumb Code     0  printfa.o(i.__0snprintf)
-    snprintf                                 0x080013c5   Thumb Code     0  printfa.o(i.__0snprintf)
-    __0vsnprintf                             0x080013f9   Thumb Code    46  printfa.o(i.__0vsnprintf)
-    __1vsnprintf                             0x080013f9   Thumb Code     0  printfa.o(i.__0vsnprintf)
-    __2vsnprintf                             0x080013f9   Thumb Code     0  printfa.o(i.__0vsnprintf)
-    __c89vsnprintf                           0x080013f9   Thumb Code     0  printfa.o(i.__0vsnprintf)
-    vsnprintf                                0x080013f9   Thumb Code     0  printfa.o(i.__0vsnprintf)
-    __scatterload_copy                       0x0800142d   Thumb Code    14  handlers.o(i.__scatterload_copy)
-    __scatterload_null                       0x0800143b   Thumb Code     2  handlers.o(i.__scatterload_null)
-    __scatterload_zeroinit                   0x0800143d   Thumb Code    14  handlers.o(i.__scatterload_zeroinit)
-    bl_usart_init                            0x080028c1   Thumb Code    16  bl_usart.o(i.bl_usart_init)
-    bl_usart_register_rx_callback            0x080028d1   Thumb Code     6  bl_usart.o(i.bl_usart_register_rx_callback)
-    bl_usart_write                           0x080028f5   Thumb Code    42  bl_usart.o(i.bl_usart_write)
-    board_lowlevel_init                      0x08002925   Thumb Code    84  board.o(i.board_lowlevel_init)
-    bootloader_main                          0x08002a61   Thumb Code   186  bootloader.o(i.bootloader_main)
-    console_init                             0x08002b81   Thumb Code    12  console.o(i.console_init)
-    console_write                            0x08002c09   Thumb Code    40  console.o(i.console_write)
-    crc16                                    0x08002c35   Thumb Code    40  crc16.o(i.crc16)
-    crc32                                    0x08002c61   Thumb Code    48  crc32.o(i.crc32)
-    elog_get_filter_tag_lvl                  0x08002c95   Thumb Code   164  elog.o(i.elog_get_filter_tag_lvl)
-    elog_init                                0x08002da5   Thumb Code    70  elog.o(i.elog_init)
-    elog_output                              0x08002df1   Thumb Code   802  elog.o(i.elog_output)
-    elog_output_lock                         0x080031b1   Thumb Code    34  elog.o(i.elog_output_lock)
-    elog_output_lock_enabled                 0x080031d9   Thumb Code    60  elog.o(i.elog_output_lock_enabled)
-    elog_output_unlock                       0x08003219   Thumb Code    34  elog.o(i.elog_output_unlock)
-    elog_port_get_p_info                     0x08003241   Thumb Code     4  elog_port.o(i.elog_port_get_p_info)
-    elog_port_get_t_info                     0x08003249   Thumb Code     4  elog_port.o(i.elog_port_get_t_info)
-    elog_port_get_time                       0x08003251   Thumb Code    76  elog_port.o(i.elog_port_get_time)
-    elog_port_init                           0x080032b5   Thumb Code     4  elog_port.o(i.elog_port_init)
-    elog_port_output                         0x080032b9   Thumb Code    16  elog_port.o(i.elog_port_output)
-    elog_port_output_lock                    0x080032c9   Thumb Code     2  elog_port.o(i.elog_port_output_lock)
-    elog_port_output_unlock                  0x080032cb   Thumb Code     2  elog_port.o(i.elog_port_output_unlock)
-    elog_set_filter_lvl                      0x080032cd   Thumb Code    76  elog.o(i.elog_set_filter_lvl)
-    elog_set_fmt                             0x080033c9   Thumb Code    80  elog.o(i.elog_set_fmt)
-    elog_set_output_enabled                  0x0800348d   Thumb Code    82  elog.o(i.elog_set_output_enabled)
-    elog_start                               0x08003561   Thumb Code    46  elog.o(i.elog_start)
-    elog_strcpy                              0x080035f1   Thumb Code   162  elog_utils.o(i.elog_strcpy)
-    key_init                                 0x08003811   Thumb Code    42  key.o(i.key_init)
-    key_read                                 0x08003869   Thumb Code    26  key.o(i.key_read)
-    led_init                                 0x08003905   Thumb Code    60  led.o(i.led_init)
-    led_off                                  0x08003941   Thumb Code    18  led.o(i.led_off)
-    led_on                                   0x08003953   Thumb Code    18  led.o(i.led_on)
-    magic_header_get_address                 0x08003965   Thumb Code     6  magic_header.o(i.magic_header_get_address)
-    magic_header_get_crc32                   0x08003971   Thumb Code     6  magic_header.o(i.magic_header_get_crc32)
-    magic_header_get_length                  0x0800397d   Thumb Code     6  magic_header.o(i.magic_header_get_length)
-    magic_header_trap_boot                   0x08003989   Thumb Code    70  bootloader.o(i.magic_header_trap_boot)
-    magic_header_validate                    0x08003a3d   Thumb Code    42  magic_header.o(i.magic_header_validate)
-    main                                     0x08003a71   Thumb Code    78  main.o(i.main)
-    rb_empty                                 0x08003b03   Thumb Code    18  ringbuffer.o(i.rb_empty)
-    rb_full                                  0x08003b15   Thumb Code    24  ringbuffer.o(i.rb_full)
-    rb_get                                   0x08003b2d   Thumb Code    54  ringbuffer.o(i.rb_get)
-    rb_new                                   0x08003b63   Thumb Code    28  ringbuffer.o(i.rb_new)
-    rb_put                                   0x08003b7f   Thumb Code    36  ringbuffer.o(i.rb_put)
-    rb_puts                                  0x08003ba3   Thumb Code    38  ringbuffer.o(i.rb_puts)
-    rx_trap_boot                             0x08003bc9   Thumb Code    62  bootloader.o(i.rx_trap_boot)
-    stm32_flash_erase                        0x08003c4d   Thumb Code   114  stm32_flash.o(i.stm32_flash_erase)
-    stm32_flash_lock                         0x08003d2d   Thumb Code     8  stm32_flash.o(i.stm32_flash_lock)
-    stm32_flash_program                      0x08003d35   Thumb Code    56  stm32_flash.o(i.stm32_flash_program)
-    stm32_flash_unlock                       0x08003db9   Thumb Code     8  stm32_flash.o(i.stm32_flash_unlock)
-    tim_delay_init                           0x08003dc1   Thumb Code   116  tim_delay.o(i.tim_delay_init)
-    tim_delay_ms                             0x08003e39   Thumb Code    40  tim_delay.o(i.tim_delay_ms)
-    tim_get_ms                               0x08003e61   Thumb Code    20  tim_delay.o(i.tim_get_ms)
-    tim_now                                  0x08003e75   Thumb Code    52  tim_delay.o(i.tim_now)
-    Region$$Table$$Base                      0x08004858   Number         0  anon$$obj.o(Region$$Table)
-    Region$$Table$$Limit                     0x08004878   Number         0  anon$$obj.o(Region$$Table)
+    memcmp                                   0x080002a9   Thumb Code    26  memcmp.o(.text)
+    strncmp                                  0x080002c3   Thumb Code    30  strncmp.o(.text)
+    __aeabi_uidiv                            0x080002e1   Thumb Code     0  uidiv.o(.text)
+    __aeabi_uidivmod                         0x080002e1   Thumb Code    44  uidiv.o(.text)
+    __aeabi_llsl                             0x0800030d   Thumb Code    30  llshl.o(.text)
+    _ll_shift_l                              0x0800030d   Thumb Code     0  llshl.o(.text)
+    __aeabi_llsr                             0x0800032b   Thumb Code    32  llushr.o(.text)
+    _ll_ushift_r                             0x0800032b   Thumb Code     0  llushr.o(.text)
+    __I$use$fp                               0x0800034b   Thumb Code     0  iusefp.o(.text)
+    __aeabi_dadd                             0x0800034b   Thumb Code   322  dadd.o(.text)
+    __aeabi_dsub                             0x0800048d   Thumb Code     6  dadd.o(.text)
+    __aeabi_drsub                            0x08000493   Thumb Code     6  dadd.o(.text)
+    __aeabi_dmul                             0x08000499   Thumb Code   228  dmul.o(.text)
+    __aeabi_ddiv                             0x0800057d   Thumb Code   222  ddiv.o(.text)
+    __aeabi_d2ulz                            0x0800065b   Thumb Code    48  dfixul.o(.text)
+    __aeabi_cdrcmple                         0x0800068d   Thumb Code    48  cdrcmple.o(.text)
+    __scatterload                            0x080006bd   Thumb Code    28  init.o(.text)
+    __scatterload_rt2                        0x080006bd   Thumb Code     0  init.o(.text)
+    __aeabi_lasr                             0x080006e1   Thumb Code    36  llsshr.o(.text)
+    _ll_sshift_r                             0x080006e1   Thumb Code     0  llsshr.o(.text)
+    _double_round                            0x08000705   Thumb Code    30  depilogue.o(.text)
+    _double_epilogue                         0x08000723   Thumb Code   156  depilogue.o(.text)
+    FLASH_EraseSector                        0x080007c1   Thumb Code   130  stm32f4xx_flash.o(i.FLASH_EraseSector)
+    FLASH_GetStatus                          0x08000849   Thumb Code    80  stm32f4xx_flash.o(i.FLASH_GetStatus)
+    FLASH_Lock                               0x0800089d   Thumb Code    14  stm32f4xx_flash.o(i.FLASH_Lock)
+    FLASH_ProgramWord                        0x080008b1   Thumb Code    74  stm32f4xx_flash.o(i.FLASH_ProgramWord)
+    FLASH_Unlock                             0x08000901   Thumb Code    24  stm32f4xx_flash.o(i.FLASH_Unlock)
+    FLASH_WaitForLastOperation               0x08000925   Thumb Code    34  stm32f4xx_flash.o(i.FLASH_WaitForLastOperation)
+    GPIO_Init                                0x08000947   Thumb Code   144  stm32f4xx_gpio.o(i.GPIO_Init)
+    GPIO_PinAFConfig                         0x080009d7   Thumb Code    70  stm32f4xx_gpio.o(i.GPIO_PinAFConfig)
+    GPIO_ReadInputDataBit                    0x08000a1d   Thumb Code    18  stm32f4xx_gpio.o(i.GPIO_ReadInputDataBit)
+    GPIO_StructInit                          0x08000a2f   Thumb Code    18  stm32f4xx_gpio.o(i.GPIO_StructInit)
+    GPIO_WriteBit                            0x08000a41   Thumb Code    12  stm32f4xx_gpio.o(i.GPIO_WriteBit)
+    NVIC_Init                                0x08000a65   Thumb Code   106  misc.o(i.NVIC_Init)
+    RCC_AHB1PeriphClockCmd                   0x08000b1d   Thumb Code    26  stm32f4xx_rcc.o(i.RCC_AHB1PeriphClockCmd)
+    RCC_APB1PeriphClockCmd                   0x08000b3d   Thumb Code    26  stm32f4xx_rcc.o(i.RCC_APB1PeriphClockCmd)
+    RCC_APB1PeriphResetCmd                   0x08000b5d   Thumb Code    26  stm32f4xx_rcc.o(i.RCC_APB1PeriphResetCmd)
+    RCC_APB2PeriphClockCmd                   0x08000b7d   Thumb Code    26  stm32f4xx_rcc.o(i.RCC_APB2PeriphClockCmd)
+    RCC_APB2PeriphResetCmd                   0x08000b9d   Thumb Code    26  stm32f4xx_rcc.o(i.RCC_APB2PeriphResetCmd)
+    RCC_GetClocksFreq                        0x08000bbd   Thumb Code   214  stm32f4xx_rcc.o(i.RCC_GetClocksFreq)
+    SystemInit                               0x08000d91   Thumb Code    88  system_stm32f4xx.o(i.SystemInit)
+    TIM6_DAC_IRQHandler                      0x08000df9   Thumb Code    56  tim_delay.o(i.TIM6_DAC_IRQHandler)
+    TIM_ClearITPendingBit                    0x08000e3d   Thumb Code     6  stm32f4xx_tim.o(i.TIM_ClearITPendingBit)
+    TIM_Cmd                                  0x08000e43   Thumb Code    24  stm32f4xx_tim.o(i.TIM_Cmd)
+    TIM_DeInit                               0x08000e5d   Thumb Code   346  stm32f4xx_tim.o(i.TIM_DeInit)
+    TIM_GetCounter                           0x08000fed   Thumb Code     6  stm32f4xx_tim.o(i.TIM_GetCounter)
+    TIM_GetITStatus                          0x08000ff3   Thumb Code    34  stm32f4xx_tim.o(i.TIM_GetITStatus)
+    TIM_ITConfig                             0x08001015   Thumb Code    18  stm32f4xx_tim.o(i.TIM_ITConfig)
+    TIM_TimeBaseInit                         0x08001029   Thumb Code   104  stm32f4xx_tim.o(i.TIM_TimeBaseInit)
+    TIM_TimeBaseStructInit                   0x080010ad   Thumb Code    18  stm32f4xx_tim.o(i.TIM_TimeBaseStructInit)
+    USART3_IRQHandler                        0x080010c1   Thumb Code    54  bl_usart.o(i.USART3_IRQHandler)
+    USART_ClearITPendingBit                  0x08001101   Thumb Code    30  stm32f4xx_usart.o(i.USART_ClearITPendingBit)
+    USART_Cmd                                0x0800111f   Thumb Code    24  stm32f4xx_usart.o(i.USART_Cmd)
+    USART_DeInit                             0x08001139   Thumb Code   206  stm32f4xx_usart.o(i.USART_DeInit)
+    USART_GetFlagStatus                      0x08001229   Thumb Code    26  stm32f4xx_usart.o(i.USART_GetFlagStatus)
+    USART_GetITStatus                        0x08001243   Thumb Code    84  stm32f4xx_usart.o(i.USART_GetITStatus)
+    USART_ITConfig                           0x08001297   Thumb Code    74  stm32f4xx_usart.o(i.USART_ITConfig)
+    USART_Init                               0x080012e1   Thumb Code   204  stm32f4xx_usart.o(i.USART_Init)
+    USART_ReceiveData                        0x080013b5   Thumb Code    10  stm32f4xx_usart.o(i.USART_ReceiveData)
+    USART_SendData                           0x080013bf   Thumb Code     8  stm32f4xx_usart.o(i.USART_SendData)
+    USART_StructInit                         0x080013c7   Thumb Code    24  stm32f4xx_usart.o(i.USART_StructInit)
+    __0snprintf                              0x080013e1   Thumb Code    48  printfa.o(i.__0snprintf)
+    __1snprintf                              0x080013e1   Thumb Code     0  printfa.o(i.__0snprintf)
+    __2snprintf                              0x080013e1   Thumb Code     0  printfa.o(i.__0snprintf)
+    __c89snprintf                            0x080013e1   Thumb Code     0  printfa.o(i.__0snprintf)
+    snprintf                                 0x080013e1   Thumb Code     0  printfa.o(i.__0snprintf)
+    __0vsnprintf                             0x08001415   Thumb Code    46  printfa.o(i.__0vsnprintf)
+    __1vsnprintf                             0x08001415   Thumb Code     0  printfa.o(i.__0vsnprintf)
+    __2vsnprintf                             0x08001415   Thumb Code     0  printfa.o(i.__0vsnprintf)
+    __c89vsnprintf                           0x08001415   Thumb Code     0  printfa.o(i.__0vsnprintf)
+    vsnprintf                                0x08001415   Thumb Code     0  printfa.o(i.__0vsnprintf)
+    __scatterload_copy                       0x08001449   Thumb Code    14  handlers.o(i.__scatterload_copy)
+    __scatterload_null                       0x08001457   Thumb Code     2  handlers.o(i.__scatterload_null)
+    __scatterload_zeroinit                   0x08001459   Thumb Code    14  handlers.o(i.__scatterload_zeroinit)
+    bl_usart_init                            0x08003051   Thumb Code    16  bl_usart.o(i.bl_usart_init)
+    bl_usart_register_rx_callback            0x08003061   Thumb Code     6  bl_usart.o(i.bl_usart_register_rx_callback)
+    bl_usart_write                           0x08003085   Thumb Code    42  bl_usart.o(i.bl_usart_write)
+    board_lowlevel_init                      0x080030b5   Thumb Code    84  board.o(i.board_lowlevel_init)
+    boot_config_get_active_partition         0x080032dd   Thumb Code    12  boot_config.o(i.boot_config_get_active_partition)
+    boot_config_get_upgrade_state            0x080032e9   Thumb Code    12  boot_config.o(i.boot_config_get_upgrade_state)
+    boot_config_init_default                 0x080032f5   Thumb Code    94  boot_config.o(i.boot_config_init_default)
+    boot_config_is_partition_valid           0x080033a9   Thumb Code    42  boot_config.o(i.boot_config_is_partition_valid)
+    boot_config_load                         0x080033d5   Thumb Code   120  boot_config.o(i.boot_config_load)
+    boot_config_save                         0x080034e1   Thumb Code   162  boot_config.o(i.boot_config_save)
+    boot_config_set_active_partition         0x080035f9   Thumb Code    94  boot_config.o(i.boot_config_set_active_partition)
+    boot_config_set_partition_valid          0x080036c1   Thumb Code    78  boot_config.o(i.boot_config_set_partition_valid)
+    boot_config_set_upgrade_state            0x0800375d   Thumb Code    68  boot_config.o(i.boot_config_set_upgrade_state)
+    boot_config_validate                     0x080037f1   Thumb Code   188  boot_config.o(i.boot_config_validate)
+    bootloader_main                          0x08003965   Thumb Code   418  bootloader.o(i.bootloader_main)
+    console_init                             0x08003c3d   Thumb Code    12  console.o(i.console_init)
+    console_write                            0x08003cc5   Thumb Code    40  console.o(i.console_write)
+    crc16                                    0x08003cf1   Thumb Code    40  crc16.o(i.crc16)
+    crc32                                    0x08003d1d   Thumb Code    48  crc32.o(i.crc32)
+    elog_get_filter_tag_lvl                  0x08003d51   Thumb Code   164  elog.o(i.elog_get_filter_tag_lvl)
+    elog_init                                0x08003e61   Thumb Code    70  elog.o(i.elog_init)
+    elog_output                              0x08003ead   Thumb Code   802  elog.o(i.elog_output)
+    elog_output_lock                         0x0800426d   Thumb Code    34  elog.o(i.elog_output_lock)
+    elog_output_lock_enabled                 0x08004295   Thumb Code    60  elog.o(i.elog_output_lock_enabled)
+    elog_output_unlock                       0x080042d5   Thumb Code    34  elog.o(i.elog_output_unlock)
+    elog_port_get_p_info                     0x080042fd   Thumb Code     4  elog_port.o(i.elog_port_get_p_info)
+    elog_port_get_t_info                     0x08004305   Thumb Code     4  elog_port.o(i.elog_port_get_t_info)
+    elog_port_get_time                       0x0800430d   Thumb Code    76  elog_port.o(i.elog_port_get_time)
+    elog_port_init                           0x08004371   Thumb Code     4  elog_port.o(i.elog_port_init)
+    elog_port_output                         0x08004375   Thumb Code    16  elog_port.o(i.elog_port_output)
+    elog_port_output_lock                    0x08004385   Thumb Code     2  elog_port.o(i.elog_port_output_lock)
+    elog_port_output_unlock                  0x08004387   Thumb Code     2  elog_port.o(i.elog_port_output_unlock)
+    elog_set_filter_lvl                      0x08004389   Thumb Code    76  elog.o(i.elog_set_filter_lvl)
+    elog_set_fmt                             0x08004485   Thumb Code    80  elog.o(i.elog_set_fmt)
+    elog_set_output_enabled                  0x08004549   Thumb Code    82  elog.o(i.elog_set_output_enabled)
+    elog_start                               0x0800461d   Thumb Code    46  elog.o(i.elog_start)
+    elog_strcpy                              0x080046ad   Thumb Code   162  elog_utils.o(i.elog_strcpy)
+    key_init                                 0x080048cd   Thumb Code    42  key.o(i.key_init)
+    key_read                                 0x08004925   Thumb Code    26  key.o(i.key_read)
+    led_init                                 0x080049bd   Thumb Code    60  led.o(i.led_init)
+    led_off                                  0x080049f9   Thumb Code    18  led.o(i.led_off)
+    led_on                                   0x08004a0b   Thumb Code    18  led.o(i.led_on)
+    magic_header_get_address_partition       0x08004a1d   Thumb Code    18  magic_header.o(i.magic_header_get_address_partition)
+    magic_header_get_crc32_partition         0x08004a39   Thumb Code    18  magic_header.o(i.magic_header_get_crc32_partition)
+    magic_header_get_length_partition        0x08004a55   Thumb Code    18  magic_header.o(i.magic_header_get_length_partition)
+    magic_header_trap_boot                   0x08004a71   Thumb Code    86  bootloader.o(i.magic_header_trap_boot)
+    magic_header_validate_partition          0x08004b65   Thumb Code    66  magic_header.o(i.magic_header_validate_partition)
+    main                                     0x08004bb5   Thumb Code    78  main.o(i.main)
+    partition_get_address                    0x08004c1d   Thumb Code    46  partition.o(i.partition_get_address)
+    partition_get_download_target            0x08004c8d   Thumb Code    26  partition.o(i.partition_get_download_target)
+    partition_get_opposite                   0x08004ca7   Thumb Code    12  partition.o(i.partition_get_opposite)
+    partition_get_size                       0x08004cb5   Thumb Code    50  partition.o(i.partition_get_size)
+    rb_empty                                 0x08004d4d   Thumb Code    18  ringbuffer.o(i.rb_empty)
+    rb_full                                  0x08004d5f   Thumb Code    24  ringbuffer.o(i.rb_full)
+    rb_get                                   0x08004d77   Thumb Code    54  ringbuffer.o(i.rb_get)
+    rb_new                                   0x08004dad   Thumb Code    28  ringbuffer.o(i.rb_new)
+    rb_put                                   0x08004dc9   Thumb Code    36  ringbuffer.o(i.rb_put)
+    rb_puts                                  0x08004ded   Thumb Code    38  ringbuffer.o(i.rb_puts)
+    rx_trap_boot                             0x08004e15   Thumb Code    62  bootloader.o(i.rx_trap_boot)
+    stm32_flash_erase                        0x08004e99   Thumb Code   124  stm32_flash.o(i.stm32_flash_erase)
+    stm32_flash_lock                         0x08004f81   Thumb Code     8  stm32_flash.o(i.stm32_flash_lock)
+    stm32_flash_program                      0x08004f89   Thumb Code    56  stm32_flash.o(i.stm32_flash_program)
+    stm32_flash_unlock                       0x0800500d   Thumb Code     8  stm32_flash.o(i.stm32_flash_unlock)
+    tim_delay_init                           0x08005015   Thumb Code   116  tim_delay.o(i.tim_delay_init)
+    tim_delay_ms                             0x0800508d   Thumb Code    40  tim_delay.o(i.tim_delay_ms)
+    tim_get_ms                               0x080050b5   Thumb Code    20  tim_delay.o(i.tim_get_ms)
+    tim_now                                  0x080050c9   Thumb Code    52  tim_delay.o(i.tim_now)
+    Region$$Table$$Base                      0x08005c5c   Number         0  anon$$obj.o(Region$$Table)
+    Region$$Table$$Limit                     0x08005c7c   Number         0  anon$$obj.o(Region$$Table)
     led1                                     0x20000024   Data           4  board.o(.data)
     led2                                     0x20000028   Data           4  board.o(.data)
     led3                                     0x2000002c   Data           4  board.o(.data)
@@ -2434,7 +2636,7 @@ Image Symbol Table
     key2                                     0x2000004c   Data           4  board.o(.data)
     key3                                     0x20000050   Data           4  board.o(.data)
     elog_assert_hook                         0x200000ac   Data           4  elog.o(.data)
-    __initial_sp                             0x20002dc8   Data           0  startup_stm32f40_41xxx.o(STACK)
+    __initial_sp                             0x20002ec8   Data           0  startup_stm32f40_41xxx.o(STACK)
 
 
 
@@ -2444,217 +2646,245 @@ Memory Map of the image
 
   Image Entry point : 0x08000189
 
-  Load Region LR_IROM1 (Base: 0x08000000, Size: 0x00004928, Max: 0x00010000, ABSOLUTE)
+  Load Region LR_IROM1 (Base: 0x08000000, Size: 0x00005d2c, Max: 0x00010000, ABSOLUTE)
 
-    Execution Region ER_IROM1 (Exec base: 0x08000000, Load base: 0x08000000, Size: 0x00004878, Max: 0x00010000, ABSOLUTE)
-
-    Exec Addr    Load Addr    Size         Type   Attr      Idx    E Section Name        Object
-
-    0x08000000   0x08000000   0x00000188   Data   RO          741    RESET               startup_stm32f40_41xxx.o
-    0x08000188   0x08000188   0x00000000   Code   RO         6193  * .ARM.Collect$$$$00000000  mc_w.l(entry.o)
-    0x08000188   0x08000188   0x00000004   Code   RO         6475    .ARM.Collect$$$$00000001  mc_w.l(entry2.o)
-    0x0800018c   0x0800018c   0x00000004   Code   RO         6478    .ARM.Collect$$$$00000004  mc_w.l(entry5.o)
-    0x08000190   0x08000190   0x00000000   Code   RO         6480    .ARM.Collect$$$$00000008  mc_w.l(entry7b.o)
-    0x08000190   0x08000190   0x00000000   Code   RO         6482    .ARM.Collect$$$$0000000A  mc_w.l(entry8b.o)
-    0x08000190   0x08000190   0x00000008   Code   RO         6483    .ARM.Collect$$$$0000000B  mc_w.l(entry9a.o)
-    0x08000198   0x08000198   0x00000004   Code   RO         6490    .ARM.Collect$$$$0000000E  mc_w.l(entry12b.o)
-    0x0800019c   0x0800019c   0x00000000   Code   RO         6485    .ARM.Collect$$$$0000000F  mc_w.l(entry10a.o)
-    0x0800019c   0x0800019c   0x00000000   Code   RO         6487    .ARM.Collect$$$$00000011  mc_w.l(entry11a.o)
-    0x0800019c   0x0800019c   0x00000004   Code   RO         6476    .ARM.Collect$$$$00002712  mc_w.l(entry2.o)
-    0x080001a0   0x080001a0   0x00000008   Code   RO          437    .text               jumpapp.o
-    0x080001a8   0x080001a8   0x00000024   Code   RO          742    .text               startup_stm32f40_41xxx.o
-    0x080001cc   0x080001cc   0x00000062   Code   RO         6196    .text               mc_w.l(uldiv.o)
-    0x0800022e   0x0800022e   0x00000024   Code   RO         6198    .text               mc_w.l(memcpya.o)
-    0x08000252   0x08000252   0x00000024   Code   RO         6200    .text               mc_w.l(memseta.o)
-    0x08000276   0x08000276   0x00000024   Code   RO         6202    .text               mc_w.l(strstr.o)
-    0x0800029a   0x0800029a   0x0000000e   Code   RO         6206    .text               mc_w.l(strlen.o)
-    0x080002a8   0x080002a8   0x0000001e   Code   RO         6210    .text               mc_w.l(strncmp.o)
-    0x080002c6   0x080002c6   0x0000002c   Code   RO         6492    .text               mc_w.l(uidiv.o)
-    0x080002f2   0x080002f2   0x0000001e   Code   RO         6494    .text               mc_w.l(llshl.o)
-    0x08000310   0x08000310   0x00000020   Code   RO         6496    .text               mc_w.l(llushr.o)
-    0x08000330   0x08000330   0x00000000   Code   RO         6498    .text               mc_w.l(iusefp.o)
-    0x08000330   0x08000330   0x0000014e   Code   RO         6499    .text               mf_w.l(dadd.o)
-    0x0800047e   0x0800047e   0x000000e4   Code   RO         6501    .text               mf_w.l(dmul.o)
-    0x08000562   0x08000562   0x000000de   Code   RO         6503    .text               mf_w.l(ddiv.o)
-    0x08000640   0x08000640   0x00000030   Code   RO         6505    .text               mf_w.l(dfixul.o)
-    0x08000670   0x08000670   0x00000030   Code   RO         6507    .text               mf_w.l(cdrcmple.o)
-    0x080006a0   0x080006a0   0x00000024   Code   RO         6509    .text               mc_w.l(init.o)
-    0x080006c4   0x080006c4   0x00000024   Code   RO         6511    .text               mc_w.l(llsshr.o)
-    0x080006e8   0x080006e8   0x000000ba   Code   RO         6513    .text               mf_w.l(depilogue.o)
-    0x080007a2   0x080007a2   0x00000002   PAD
-    0x080007a4   0x080007a4   0x00000088   Code   RO         2223    i.FLASH_EraseSector  stm32f4xx_flash.o
-    0x0800082c   0x0800082c   0x00000054   Code   RO         2225    i.FLASH_GetStatus   stm32f4xx_flash.o
-    0x08000880   0x08000880   0x00000014   Code   RO         2229    i.FLASH_Lock        stm32f4xx_flash.o
-    0x08000894   0x08000894   0x00000050   Code   RO         2253    i.FLASH_ProgramWord  stm32f4xx_flash.o
-    0x080008e4   0x080008e4   0x00000024   Code   RO         2255    i.FLASH_Unlock      stm32f4xx_flash.o
-    0x08000908   0x08000908   0x00000022   Code   RO         2256    i.FLASH_WaitForLastOperation  stm32f4xx_flash.o
-    0x0800092a   0x0800092a   0x00000090   Code   RO         2665    i.GPIO_Init         stm32f4xx_gpio.o
-    0x080009ba   0x080009ba   0x00000046   Code   RO         2666    i.GPIO_PinAFConfig  stm32f4xx_gpio.o
-    0x08000a00   0x08000a00   0x00000012   Code   RO         2669    i.GPIO_ReadInputDataBit  stm32f4xx_gpio.o
-    0x08000a12   0x08000a12   0x00000012   Code   RO         2674    i.GPIO_StructInit   stm32f4xx_gpio.o
-    0x08000a24   0x08000a24   0x0000000c   Code   RO         2677    i.GPIO_WriteBit     stm32f4xx_gpio.o
-    0x08000a30   0x08000a30   0x00000018   Code   RO          195    i.NVIC_DisableIRQ   bootloader.o
-    0x08000a48   0x08000a48   0x00000078   Code   RO          790    i.NVIC_Init         misc.o
-    0x08000ac0   0x08000ac0   0x00000040   Code   RO          196    i.NVIC_SystemReset  bootloader.o
-    0x08000b00   0x08000b00   0x00000020   Code   RO         3591    i.RCC_AHB1PeriphClockCmd  stm32f4xx_rcc.o
-    0x08000b20   0x08000b20   0x00000020   Code   RO         3600    i.RCC_APB1PeriphClockCmd  stm32f4xx_rcc.o
-    0x08000b40   0x08000b40   0x00000020   Code   RO         3602    i.RCC_APB1PeriphResetCmd  stm32f4xx_rcc.o
-    0x08000b60   0x08000b60   0x00000020   Code   RO         3603    i.RCC_APB2PeriphClockCmd  stm32f4xx_rcc.o
-    0x08000b80   0x08000b80   0x00000020   Code   RO         3605    i.RCC_APB2PeriphResetCmd  stm32f4xx_rcc.o
-    0x08000ba0   0x08000ba0   0x000000e8   Code   RO         3612    i.RCC_GetClocksFreq  stm32f4xx_rcc.o
-    0x08000c88   0x08000c88   0x000000ec   Code   RO          749    i.SetSysClock       system_stm32f4xx.o
-    0x08000d74   0x08000d74   0x00000068   Code   RO          751    i.SystemInit        system_stm32f4xx.o
-    0x08000ddc   0x08000ddc   0x00000044   Code   RO          622    i.TIM6_DAC_IRQHandler  tim_delay.o
-    0x08000e20   0x08000e20   0x00000006   Code   RO         4982    i.TIM_ClearITPendingBit  stm32f4xx_tim.o
-    0x08000e26   0x08000e26   0x00000018   Code   RO         4987    i.TIM_Cmd           stm32f4xx_tim.o
-    0x08000e3e   0x08000e3e   0x00000002   PAD
-    0x08000e40   0x08000e40   0x00000190   Code   RO         4992    i.TIM_DeInit        stm32f4xx_tim.o
-    0x08000fd0   0x08000fd0   0x00000006   Code   RO         5006    i.TIM_GetCounter    stm32f4xx_tim.o
-    0x08000fd6   0x08000fd6   0x00000022   Code   RO         5008    i.TIM_GetITStatus   stm32f4xx_tim.o
-    0x08000ff8   0x08000ff8   0x00000012   Code   RO         5012    i.TIM_ITConfig      stm32f4xx_tim.o
-    0x0800100a   0x0800100a   0x00000002   PAD
-    0x0800100c   0x0800100c   0x00000084   Code   RO         5059    i.TIM_TimeBaseInit  stm32f4xx_tim.o
-    0x08001090   0x08001090   0x00000012   Code   RO         5060    i.TIM_TimeBaseStructInit  stm32f4xx_tim.o
-    0x080010a2   0x080010a2   0x00000002   PAD
-    0x080010a4   0x080010a4   0x00000040   Code   RO          444    i.USART3_IRQHandler  bl_usart.o
-    0x080010e4   0x080010e4   0x0000001e   Code   RO         5538    i.USART_ClearITPendingBit  stm32f4xx_usart.o
-    0x08001102   0x08001102   0x00000018   Code   RO         5541    i.USART_Cmd         stm32f4xx_usart.o
-    0x0800111a   0x0800111a   0x00000002   PAD
-    0x0800111c   0x0800111c   0x000000f0   Code   RO         5543    i.USART_DeInit      stm32f4xx_usart.o
-    0x0800120c   0x0800120c   0x0000001a   Code   RO         5544    i.USART_GetFlagStatus  stm32f4xx_usart.o
-    0x08001226   0x08001226   0x00000054   Code   RO         5545    i.USART_GetITStatus  stm32f4xx_usart.o
-    0x0800127a   0x0800127a   0x0000004a   Code   RO         5547    i.USART_ITConfig    stm32f4xx_usart.o
-    0x080012c4   0x080012c4   0x000000d4   Code   RO         5548    i.USART_Init        stm32f4xx_usart.o
-    0x08001398   0x08001398   0x0000000a   Code   RO         5555    i.USART_ReceiveData  stm32f4xx_usart.o
-    0x080013a2   0x080013a2   0x00000008   Code   RO         5558    i.USART_SendData    stm32f4xx_usart.o
-    0x080013aa   0x080013aa   0x00000018   Code   RO         5564    i.USART_StructInit  stm32f4xx_usart.o
-    0x080013c2   0x080013c2   0x00000002   PAD
-    0x080013c4   0x080013c4   0x00000034   Code   RO         6448    i.__0snprintf       mc_w.l(printfa.o)
-    0x080013f8   0x080013f8   0x00000034   Code   RO         6452    i.__0vsnprintf      mc_w.l(printfa.o)
-    0x0800142c   0x0800142c   0x0000000e   Code   RO         6517    i.__scatterload_copy  mc_w.l(handlers.o)
-    0x0800143a   0x0800143a   0x00000002   Code   RO         6518    i.__scatterload_null  mc_w.l(handlers.o)
-    0x0800143c   0x0800143c   0x0000000e   Code   RO         6519    i.__scatterload_zeroinit  mc_w.l(handlers.o)
-    0x0800144a   0x0800144a   0x00000002   PAD
-    0x0800144c   0x0800144c   0x00000184   Code   RO         6454    i._fp_digits        mc_w.l(printfa.o)
-    0x080015d0   0x080015d0   0x000006b4   Code   RO         6455    i._printf_core      mc_w.l(printfa.o)
-    0x08001c84   0x08001c84   0x00000024   Code   RO         6456    i._printf_post_padding  mc_w.l(printfa.o)
-    0x08001ca8   0x08001ca8   0x0000002e   Code   RO         6457    i._printf_pre_padding  mc_w.l(printfa.o)
-    0x08001cd6   0x08001cd6   0x00000016   Code   RO         6458    i._snputc           mc_w.l(printfa.o)
-    0x08001cec   0x08001cec   0x000000d0   Code   RO          197    i.application_validate  bootloader.o
-    0x08001dbc   0x08001dbc   0x000002a4   Code   RO          198    i.bl_byte_handler   bootloader.o
-    0x08002060   0x08002060   0x0000005c   Code   RO          199    i.bl_opcode_boot_handler  bootloader.o
-    0x080020bc   0x080020bc   0x0000018c   Code   RO          200    i.bl_opcode_erase_handler  bootloader.o
-    0x08002248   0x08002248   0x00000104   Code   RO          201    i.bl_opcode_inquery_handler  bootloader.o
-    0x0800234c   0x0800234c   0x0000023c   Code   RO          202    i.bl_opcode_program_handler  bootloader.o
-    0x08002588   0x08002588   0x00000088   Code   RO          203    i.bl_opcode_reset_handler  bootloader.o
-    0x08002610   0x08002610   0x00000198   Code   RO          204    i.bl_opcode_verify_handler  bootloader.o
-    0x080027a8   0x080027a8   0x000000a4   Code   RO          205    i.bl_packet_handler  bootloader.o
-    0x0800284c   0x0800284c   0x00000074   Code   RO          206    i.bl_response       bootloader.o
-    0x080028c0   0x080028c0   0x00000010   Code   RO          445    i.bl_usart_init     bl_usart.o
-    0x080028d0   0x080028d0   0x0000000c   Code   RO          446    i.bl_usart_register_rx_callback  bl_usart.o
-    0x080028dc   0x080028dc   0x00000018   Code   RO          207    i.bl_usart_rx_handler  bootloader.o
-    0x080028f4   0x080028f4   0x00000030   Code   RO          447    i.bl_usart_write    bl_usart.o
-    0x08002924   0x08002924   0x00000054   Code   RO           44    i.board_lowlevel_init  board.o
-    0x08002978   0x08002978   0x000000e8   Code   RO          208    i.boot_application  bootloader.o
-    0x08002a60   0x08002a60   0x00000120   Code   RO          209    i.bootloader_main   bootloader.o
-    0x08002b80   0x08002b80   0x0000000c   Code   RO          507    i.console_init      console.o
-    0x08002b8c   0x08002b8c   0x0000003c   Code   RO          508    i.console_io_init   console.o
-    0x08002bc8   0x08002bc8   0x00000040   Code   RO          509    i.console_usart_init  console.o
-    0x08002c08   0x08002c08   0x0000002c   Code   RO          510    i.console_write     console.o
-    0x08002c34   0x08002c34   0x0000002c   Code   RO         5792    i.crc16             crc16.o
-    0x08002c60   0x08002c60   0x00000034   Code   RO         5806    i.crc32             crc32.o
-    0x08002c94   0x08002c94   0x00000110   Code   RO         5875    i.elog_get_filter_tag_lvl  elog.o
-    0x08002da4   0x08002da4   0x0000004c   Code   RO         5878    i.elog_init         elog.o
-    0x08002df0   0x08002df0   0x000003c0   Code   RO         5879    i.elog_output       elog.o
-    0x080031b0   0x080031b0   0x00000028   Code   RO         5880    i.elog_output_lock  elog.o
-    0x080031d8   0x080031d8   0x00000040   Code   RO         5881    i.elog_output_lock_enabled  elog.o
-    0x08003218   0x08003218   0x00000028   Code   RO         5882    i.elog_output_unlock  elog.o
-    0x08003240   0x08003240   0x00000008   Code   RO         6046    i.elog_port_get_p_info  elog_port.o
-    0x08003248   0x08003248   0x00000008   Code   RO         6047    i.elog_port_get_t_info  elog_port.o
-    0x08003250   0x08003250   0x00000064   Code   RO         6048    i.elog_port_get_time  elog_port.o
-    0x080032b4   0x080032b4   0x00000004   Code   RO         6049    i.elog_port_init    elog_port.o
-    0x080032b8   0x080032b8   0x00000010   Code   RO         6050    i.elog_port_output  elog_port.o
-    0x080032c8   0x080032c8   0x00000002   Code   RO         6051    i.elog_port_output_lock  elog_port.o
-    0x080032ca   0x080032ca   0x00000002   Code   RO         6052    i.elog_port_output_unlock  elog_port.o
-    0x080032cc   0x080032cc   0x000000c0   Code   RO         5886    i.elog_set_filter_lvl  elog.o
-    0x0800338c   0x0800338c   0x0000003c   Code   RO         5889    i.elog_set_filter_tag_lvl_default  elog.o
-    0x080033c8   0x080033c8   0x000000c4   Code   RO         5890    i.elog_set_fmt      elog.o
-    0x0800348c   0x0800348c   0x000000d4   Code   RO         5891    i.elog_set_output_enabled  elog.o
-    0x08003560   0x08003560   0x00000090   Code   RO         5892    i.elog_start        elog.o
-    0x080035f0   0x080035f0   0x00000108   Code   RO         6110    i.elog_strcpy       elog_utils.o
-    0x080036f8   0x080036f8   0x000000d0   Code   RO         5894    i.get_fmt_enabled   elog.o
-    0x080037c8   0x080037c8   0x0000001c   Code   RO         5895    i.get_fmt_used_and_enabled_ptr  elog.o
-    0x080037e4   0x080037e4   0x0000001c   Code   RO         5896    i.get_fmt_used_and_enabled_u32  elog.o
-    0x08003800   0x08003800   0x00000010   Code   RO          210    i.get_u32_inc       bootloader.o
-    0x08003810   0x08003810   0x0000002a   Code   RO          550    i.key_init          key.o
-    0x0800383a   0x0800383a   0x00000002   PAD
-    0x0800383c   0x0800383c   0x0000002c   Code   RO          211    i.key_press_check   bootloader.o
-    0x08003868   0x08003868   0x0000001a   Code   RO          551    i.key_read          key.o
-    0x08003882   0x08003882   0x00000002   PAD
-    0x08003884   0x08003884   0x00000080   Code   RO          212    i.key_trap_check    bootloader.o
-    0x08003904   0x08003904   0x0000003c   Code   RO          580    i.led_init          led.o
-    0x08003940   0x08003940   0x00000012   Code   RO          581    i.led_off           led.o
-    0x08003952   0x08003952   0x00000012   Code   RO          582    i.led_on            led.o
-    0x08003964   0x08003964   0x0000000c   Code   RO          386    i.magic_header_get_address  magic_header.o
-    0x08003970   0x08003970   0x0000000c   Code   RO          387    i.magic_header_get_crc32  magic_header.o
-    0x0800397c   0x0800397c   0x0000000c   Code   RO          388    i.magic_header_get_length  magic_header.o
-    0x08003988   0x08003988   0x000000b4   Code   RO          213    i.magic_header_trap_boot  bootloader.o
-    0x08003a3c   0x08003a3c   0x00000034   Code   RO          391    i.magic_header_validate  magic_header.o
-    0x08003a70   0x08003a70   0x0000004e   Code   RO            1    i.main              main.o
-    0x08003abe   0x08003abe   0x00000018   Code   RO         6137    i.next_head         ringbuffer.o
-    0x08003ad6   0x08003ad6   0x00000004   Code   RO          214    i.put_u16           bootloader.o
-    0x08003ada   0x08003ada   0x00000018   Code   RO          215    i.put_u16_inc       bootloader.o
-    0x08003af2   0x08003af2   0x00000010   Code   RO          216    i.put_u8_inc        bootloader.o
-    0x08003b02   0x08003b02   0x00000012   Code   RO         6138    i.rb_empty          ringbuffer.o
-    0x08003b14   0x08003b14   0x00000018   Code   RO         6139    i.rb_full           ringbuffer.o
-    0x08003b2c   0x08003b2c   0x00000036   Code   RO         6140    i.rb_get            ringbuffer.o
-    0x08003b62   0x08003b62   0x0000001c   Code   RO         6142    i.rb_new            ringbuffer.o
-    0x08003b7e   0x08003b7e   0x00000024   Code   RO         6143    i.rb_put            ringbuffer.o
-    0x08003ba2   0x08003ba2   0x00000026   Code   RO         6144    i.rb_puts           ringbuffer.o
-    0x08003bc8   0x08003bc8   0x00000084   Code   RO          217    i.rx_trap_boot      bootloader.o
-    0x08003c4c   0x08003c4c   0x000000e0   Code   RO          690    i.stm32_flash_erase  stm32_flash.o
-    0x08003d2c   0x08003d2c   0x00000008   Code   RO          691    i.stm32_flash_lock  stm32_flash.o
-    0x08003d34   0x08003d34   0x00000084   Code   RO          692    i.stm32_flash_program  stm32_flash.o
-    0x08003db8   0x08003db8   0x00000008   Code   RO          693    i.stm32_flash_unlock  stm32_flash.o
-    0x08003dc0   0x08003dc0   0x00000078   Code   RO          623    i.tim_delay_init    tim_delay.o
-    0x08003e38   0x08003e38   0x00000028   Code   RO          624    i.tim_delay_ms      tim_delay.o
-    0x08003e60   0x08003e60   0x00000014   Code   RO          626    i.tim_get_ms        tim_delay.o
-    0x08003e74   0x08003e74   0x0000003c   Code   RO          628    i.tim_now           tim_delay.o
-    0x08003eb0   0x08003eb0   0x00000048   Code   RO          448    i.usart_io_init     bl_usart.o
-    0x08003ef8   0x08003ef8   0x0000004c   Code   RO          449    i.usart_it_config   bl_usart.o
-    0x08003f44   0x08003f44   0x0000004c   Code   RO          450    i.usart_lowlevel_init  bl_usart.o
-    0x08003f90   0x08003f90   0x0000001c   Code   RO          218    i.wait_key_release  bootloader.o
-    0x08003fac   0x08003fac   0x0000011f   Data   RO          220    .constdata          bootloader.o
-    0x080040cb   0x080040cb   0x00000001   PAD
-    0x080040cc   0x080040cc   0x00000086   Data   RO          694    .constdata          stm32_flash.o
-    0x08004152   0x08004152   0x00000200   Data   RO         5793    .constdata          crc16.o
-    0x08004352   0x08004352   0x00000002   PAD
-    0x08004354   0x08004354   0x00000400   Data   RO         5807    .constdata          crc32.o
-    0x08004754   0x08004754   0x000000c6   Data   RO         5898    .constdata          elog.o
-    0x0800481a   0x0800481a   0x00000023   Data   RO         6111    .constdata          elog_utils.o
-    0x0800483d   0x0800483d   0x00000003   PAD
-    0x08004840   0x08004840   0x00000017   Data   RO         5899    .conststring        elog.o
-    0x08004857   0x08004857   0x00000001   PAD
-    0x08004858   0x08004858   0x00000020   Data   RO         6515    Region$$Table       anon$$obj.o
-
-
-    Execution Region RW_IRAM1 (Exec base: 0x20000000, Load base: 0x08004878, Size: 0x00002dc8, Max: 0x00020000, ABSOLUTE)
+    Execution Region ER_IROM1 (Exec base: 0x08000000, Load base: 0x08000000, Size: 0x00005c7c, Max: 0x00010000, ABSOLUTE)
 
     Exec Addr    Load Addr    Size         Type   Attr      Idx    E Section Name        Object
 
-    0x20000000   0x08004878   0x00000054   Data   RW           46    .data               board.o
-    0x20000054   0x080048cc   0x00000004   PAD
-    0x20000058   0x080048d0   0x00000018   Data   RW          221    .data               bootloader.o
-    0x20000070   0x080048e8   0x00000004   Data   RW          451    .data               bl_usart.o
-    0x20000074   0x080048ec   0x00000004   PAD
-    0x20000078   0x080048f0   0x0000000c   Data   RW          630    .data               tim_delay.o
-    0x20000084   0x080048fc   0x00000010   Data   RW         3644    .data               stm32f4xx_rcc.o
-    0x20000094   0x0800490c   0x0000001c   Data   RW         5900    .data               elog.o
-    0x200000b0        -       0x0000240e   Zero   RW          219    .bss                bootloader.o
-    0x200024be   0x08004928   0x00000002   PAD
-    0x200024c0        -       0x000004f8   Zero   RW         5897    .bss                elog.o
-    0x200029b8        -       0x00000010   Zero   RW         6053    .bss                elog_port.o
-    0x200029c8        -       0x00000400   Zero   RW          739    STACK               startup_stm32f40_41xxx.o
+    0x08000000   0x08000000   0x00000188   Data   RO          970    RESET               startup_stm32f40_41xxx.o
+    0x08000188   0x08000188   0x00000000   Code   RO         6422  * .ARM.Collect$$$$00000000  mc_w.l(entry.o)
+    0x08000188   0x08000188   0x00000004   Code   RO         6706    .ARM.Collect$$$$00000001  mc_w.l(entry2.o)
+    0x0800018c   0x0800018c   0x00000004   Code   RO         6709    .ARM.Collect$$$$00000004  mc_w.l(entry5.o)
+    0x08000190   0x08000190   0x00000000   Code   RO         6711    .ARM.Collect$$$$00000008  mc_w.l(entry7b.o)
+    0x08000190   0x08000190   0x00000000   Code   RO         6713    .ARM.Collect$$$$0000000A  mc_w.l(entry8b.o)
+    0x08000190   0x08000190   0x00000008   Code   RO         6714    .ARM.Collect$$$$0000000B  mc_w.l(entry9a.o)
+    0x08000198   0x08000198   0x00000004   Code   RO         6721    .ARM.Collect$$$$0000000E  mc_w.l(entry12b.o)
+    0x0800019c   0x0800019c   0x00000000   Code   RO         6716    .ARM.Collect$$$$0000000F  mc_w.l(entry10a.o)
+    0x0800019c   0x0800019c   0x00000000   Code   RO         6718    .ARM.Collect$$$$00000011  mc_w.l(entry11a.o)
+    0x0800019c   0x0800019c   0x00000004   Code   RO         6707    .ARM.Collect$$$$00002712  mc_w.l(entry2.o)
+    0x080001a0   0x080001a0   0x00000008   Code   RO          669    .text               jumpapp.o
+    0x080001a8   0x080001a8   0x00000024   Code   RO          971    .text               startup_stm32f40_41xxx.o
+    0x080001cc   0x080001cc   0x00000062   Code   RO         6425    .text               mc_w.l(uldiv.o)
+    0x0800022e   0x0800022e   0x00000024   Code   RO         6427    .text               mc_w.l(memcpya.o)
+    0x08000252   0x08000252   0x00000024   Code   RO         6429    .text               mc_w.l(memseta.o)
+    0x08000276   0x08000276   0x00000024   Code   RO         6431    .text               mc_w.l(strstr.o)
+    0x0800029a   0x0800029a   0x0000000e   Code   RO         6435    .text               mc_w.l(strlen.o)
+    0x080002a8   0x080002a8   0x0000001a   Code   RO         6439    .text               mc_w.l(memcmp.o)
+    0x080002c2   0x080002c2   0x0000001e   Code   RO         6441    .text               mc_w.l(strncmp.o)
+    0x080002e0   0x080002e0   0x0000002c   Code   RO         6723    .text               mc_w.l(uidiv.o)
+    0x0800030c   0x0800030c   0x0000001e   Code   RO         6725    .text               mc_w.l(llshl.o)
+    0x0800032a   0x0800032a   0x00000020   Code   RO         6727    .text               mc_w.l(llushr.o)
+    0x0800034a   0x0800034a   0x00000000   Code   RO         6729    .text               mc_w.l(iusefp.o)
+    0x0800034a   0x0800034a   0x0000014e   Code   RO         6730    .text               mf_w.l(dadd.o)
+    0x08000498   0x08000498   0x000000e4   Code   RO         6732    .text               mf_w.l(dmul.o)
+    0x0800057c   0x0800057c   0x000000de   Code   RO         6734    .text               mf_w.l(ddiv.o)
+    0x0800065a   0x0800065a   0x00000030   Code   RO         6736    .text               mf_w.l(dfixul.o)
+    0x0800068a   0x0800068a   0x00000002   PAD
+    0x0800068c   0x0800068c   0x00000030   Code   RO         6738    .text               mf_w.l(cdrcmple.o)
+    0x080006bc   0x080006bc   0x00000024   Code   RO         6740    .text               mc_w.l(init.o)
+    0x080006e0   0x080006e0   0x00000024   Code   RO         6742    .text               mc_w.l(llsshr.o)
+    0x08000704   0x08000704   0x000000ba   Code   RO         6744    .text               mf_w.l(depilogue.o)
+    0x080007be   0x080007be   0x00000002   PAD
+    0x080007c0   0x080007c0   0x00000088   Code   RO         2452    i.FLASH_EraseSector  stm32f4xx_flash.o
+    0x08000848   0x08000848   0x00000054   Code   RO         2454    i.FLASH_GetStatus   stm32f4xx_flash.o
+    0x0800089c   0x0800089c   0x00000014   Code   RO         2458    i.FLASH_Lock        stm32f4xx_flash.o
+    0x080008b0   0x080008b0   0x00000050   Code   RO         2482    i.FLASH_ProgramWord  stm32f4xx_flash.o
+    0x08000900   0x08000900   0x00000024   Code   RO         2484    i.FLASH_Unlock      stm32f4xx_flash.o
+    0x08000924   0x08000924   0x00000022   Code   RO         2485    i.FLASH_WaitForLastOperation  stm32f4xx_flash.o
+    0x08000946   0x08000946   0x00000090   Code   RO         2894    i.GPIO_Init         stm32f4xx_gpio.o
+    0x080009d6   0x080009d6   0x00000046   Code   RO         2895    i.GPIO_PinAFConfig  stm32f4xx_gpio.o
+    0x08000a1c   0x08000a1c   0x00000012   Code   RO         2898    i.GPIO_ReadInputDataBit  stm32f4xx_gpio.o
+    0x08000a2e   0x08000a2e   0x00000012   Code   RO         2903    i.GPIO_StructInit   stm32f4xx_gpio.o
+    0x08000a40   0x08000a40   0x0000000c   Code   RO         2906    i.GPIO_WriteBit     stm32f4xx_gpio.o
+    0x08000a4c   0x08000a4c   0x00000018   Code   RO          195    i.NVIC_DisableIRQ   bootloader.o
+    0x08000a64   0x08000a64   0x00000078   Code   RO         1019    i.NVIC_Init         misc.o
+    0x08000adc   0x08000adc   0x00000040   Code   RO          196    i.NVIC_SystemReset  bootloader.o
+    0x08000b1c   0x08000b1c   0x00000020   Code   RO         3820    i.RCC_AHB1PeriphClockCmd  stm32f4xx_rcc.o
+    0x08000b3c   0x08000b3c   0x00000020   Code   RO         3829    i.RCC_APB1PeriphClockCmd  stm32f4xx_rcc.o
+    0x08000b5c   0x08000b5c   0x00000020   Code   RO         3831    i.RCC_APB1PeriphResetCmd  stm32f4xx_rcc.o
+    0x08000b7c   0x08000b7c   0x00000020   Code   RO         3832    i.RCC_APB2PeriphClockCmd  stm32f4xx_rcc.o
+    0x08000b9c   0x08000b9c   0x00000020   Code   RO         3834    i.RCC_APB2PeriphResetCmd  stm32f4xx_rcc.o
+    0x08000bbc   0x08000bbc   0x000000e8   Code   RO         3841    i.RCC_GetClocksFreq  stm32f4xx_rcc.o
+    0x08000ca4   0x08000ca4   0x000000ec   Code   RO          978    i.SetSysClock       system_stm32f4xx.o
+    0x08000d90   0x08000d90   0x00000068   Code   RO          980    i.SystemInit        system_stm32f4xx.o
+    0x08000df8   0x08000df8   0x00000044   Code   RO          851    i.TIM6_DAC_IRQHandler  tim_delay.o
+    0x08000e3c   0x08000e3c   0x00000006   Code   RO         5211    i.TIM_ClearITPendingBit  stm32f4xx_tim.o
+    0x08000e42   0x08000e42   0x00000018   Code   RO         5216    i.TIM_Cmd           stm32f4xx_tim.o
+    0x08000e5a   0x08000e5a   0x00000002   PAD
+    0x08000e5c   0x08000e5c   0x00000190   Code   RO         5221    i.TIM_DeInit        stm32f4xx_tim.o
+    0x08000fec   0x08000fec   0x00000006   Code   RO         5235    i.TIM_GetCounter    stm32f4xx_tim.o
+    0x08000ff2   0x08000ff2   0x00000022   Code   RO         5237    i.TIM_GetITStatus   stm32f4xx_tim.o
+    0x08001014   0x08001014   0x00000012   Code   RO         5241    i.TIM_ITConfig      stm32f4xx_tim.o
+    0x08001026   0x08001026   0x00000002   PAD
+    0x08001028   0x08001028   0x00000084   Code   RO         5288    i.TIM_TimeBaseInit  stm32f4xx_tim.o
+    0x080010ac   0x080010ac   0x00000012   Code   RO         5289    i.TIM_TimeBaseStructInit  stm32f4xx_tim.o
+    0x080010be   0x080010be   0x00000002   PAD
+    0x080010c0   0x080010c0   0x00000040   Code   RO          676    i.USART3_IRQHandler  bl_usart.o
+    0x08001100   0x08001100   0x0000001e   Code   RO         5767    i.USART_ClearITPendingBit  stm32f4xx_usart.o
+    0x0800111e   0x0800111e   0x00000018   Code   RO         5770    i.USART_Cmd         stm32f4xx_usart.o
+    0x08001136   0x08001136   0x00000002   PAD
+    0x08001138   0x08001138   0x000000f0   Code   RO         5772    i.USART_DeInit      stm32f4xx_usart.o
+    0x08001228   0x08001228   0x0000001a   Code   RO         5773    i.USART_GetFlagStatus  stm32f4xx_usart.o
+    0x08001242   0x08001242   0x00000054   Code   RO         5774    i.USART_GetITStatus  stm32f4xx_usart.o
+    0x08001296   0x08001296   0x0000004a   Code   RO         5776    i.USART_ITConfig    stm32f4xx_usart.o
+    0x080012e0   0x080012e0   0x000000d4   Code   RO         5777    i.USART_Init        stm32f4xx_usart.o
+    0x080013b4   0x080013b4   0x0000000a   Code   RO         5784    i.USART_ReceiveData  stm32f4xx_usart.o
+    0x080013be   0x080013be   0x00000008   Code   RO         5787    i.USART_SendData    stm32f4xx_usart.o
+    0x080013c6   0x080013c6   0x00000018   Code   RO         5793    i.USART_StructInit  stm32f4xx_usart.o
+    0x080013de   0x080013de   0x00000002   PAD
+    0x080013e0   0x080013e0   0x00000034   Code   RO         6679    i.__0snprintf       mc_w.l(printfa.o)
+    0x08001414   0x08001414   0x00000034   Code   RO         6683    i.__0vsnprintf      mc_w.l(printfa.o)
+    0x08001448   0x08001448   0x0000000e   Code   RO         6748    i.__scatterload_copy  mc_w.l(handlers.o)
+    0x08001456   0x08001456   0x00000002   Code   RO         6749    i.__scatterload_null  mc_w.l(handlers.o)
+    0x08001458   0x08001458   0x0000000e   Code   RO         6750    i.__scatterload_zeroinit  mc_w.l(handlers.o)
+    0x08001466   0x08001466   0x00000002   PAD
+    0x08001468   0x08001468   0x00000184   Code   RO         6685    i._fp_digits        mc_w.l(printfa.o)
+    0x080015ec   0x080015ec   0x000006b4   Code   RO         6686    i._printf_core      mc_w.l(printfa.o)
+    0x08001ca0   0x08001ca0   0x00000024   Code   RO         6687    i._printf_post_padding  mc_w.l(printfa.o)
+    0x08001cc4   0x08001cc4   0x0000002e   Code   RO         6688    i._printf_pre_padding  mc_w.l(printfa.o)
+    0x08001cf2   0x08001cf2   0x00000016   Code   RO         6689    i._snputc           mc_w.l(printfa.o)
+    0x08001d08   0x08001d08   0x000000f0   Code   RO          197    i.application_validate_partition  bootloader.o
+    0x08001df8   0x08001df8   0x000002c0   Code   RO          198    i.bl_byte_handler   bootloader.o
+    0x080020b8   0x080020b8   0x0000005c   Code   RO          199    i.bl_opcode_boot_handler  bootloader.o
+    0x08002114   0x08002114   0x0000015c   Code   RO          200    i.bl_opcode_commit_handler  bootloader.o
+    0x08002270   0x08002270   0x0000024c   Code   RO          201    i.bl_opcode_erase_handler  bootloader.o
+    0x080024bc   0x080024bc   0x000000a8   Code   RO          202    i.bl_opcode_get_status_handler  bootloader.o
+    0x08002564   0x08002564   0x00000104   Code   RO          203    i.bl_opcode_inquery_handler  bootloader.o
+    0x08002668   0x08002668   0x0000030c   Code   RO          204    i.bl_opcode_program_handler  bootloader.o
+    0x08002974   0x08002974   0x00000088   Code   RO          205    i.bl_opcode_reset_handler  bootloader.o
+    0x080029fc   0x080029fc   0x00000150   Code   RO          206    i.bl_opcode_rollback_handler  bootloader.o
+    0x08002b4c   0x08002b4c   0x0000016c   Code   RO          207    i.bl_opcode_start_upgrade_handler  bootloader.o
+    0x08002cb8   0x08002cb8   0x00000254   Code   RO          208    i.bl_opcode_verify_handler  bootloader.o
+    0x08002f0c   0x08002f0c   0x000000d0   Code   RO          209    i.bl_packet_handler  bootloader.o
+    0x08002fdc   0x08002fdc   0x00000074   Code   RO          210    i.bl_response       bootloader.o
+    0x08003050   0x08003050   0x00000010   Code   RO          677    i.bl_usart_init     bl_usart.o
+    0x08003060   0x08003060   0x0000000c   Code   RO          678    i.bl_usart_register_rx_callback  bl_usart.o
+    0x0800306c   0x0800306c   0x00000018   Code   RO          211    i.bl_usart_rx_handler  bootloader.o
+    0x08003084   0x08003084   0x00000030   Code   RO          679    i.bl_usart_write    bl_usart.o
+    0x080030b4   0x080030b4   0x00000054   Code   RO           44    i.board_lowlevel_init  board.o
+    0x08003108   0x08003108   0x00000014   Code   RO          212    i.boot_application  bootloader.o
+    0x0800311c   0x0800311c   0x000001ac   Code   RO          213    i.boot_application_partition  bootloader.o
+    0x080032c8   0x080032c8   0x00000014   Code   RO          507    i.boot_config_calc_crc32  boot_config.o
+    0x080032dc   0x080032dc   0x0000000c   Code   RO          508    i.boot_config_get_active_partition  boot_config.o
+    0x080032e8   0x080032e8   0x0000000c   Code   RO          509    i.boot_config_get_upgrade_state  boot_config.o
+    0x080032f4   0x080032f4   0x000000b4   Code   RO          510    i.boot_config_init_default  boot_config.o
+    0x080033a8   0x080033a8   0x0000002a   Code   RO          511    i.boot_config_is_partition_valid  boot_config.o
+    0x080033d2   0x080033d2   0x00000002   PAD
+    0x080033d4   0x080033d4   0x0000010c   Code   RO          512    i.boot_config_load  boot_config.o
+    0x080034e0   0x080034e0   0x00000118   Code   RO          513    i.boot_config_save  boot_config.o
+    0x080035f8   0x080035f8   0x000000c8   Code   RO          514    i.boot_config_set_active_partition  boot_config.o
+    0x080036c0   0x080036c0   0x0000009c   Code   RO          515    i.boot_config_set_partition_valid  boot_config.o
+    0x0800375c   0x0800375c   0x00000094   Code   RO          516    i.boot_config_set_upgrade_state  boot_config.o
+    0x080037f0   0x080037f0   0x00000174   Code   RO          517    i.boot_config_validate  boot_config.o
+    0x08003964   0x08003964   0x000002d8   Code   RO          214    i.bootloader_main   bootloader.o
+    0x08003c3c   0x08003c3c   0x0000000c   Code   RO          739    i.console_init      console.o
+    0x08003c48   0x08003c48   0x0000003c   Code   RO          740    i.console_io_init   console.o
+    0x08003c84   0x08003c84   0x00000040   Code   RO          741    i.console_usart_init  console.o
+    0x08003cc4   0x08003cc4   0x0000002c   Code   RO          742    i.console_write     console.o
+    0x08003cf0   0x08003cf0   0x0000002c   Code   RO         6021    i.crc16             crc16.o
+    0x08003d1c   0x08003d1c   0x00000034   Code   RO         6035    i.crc32             crc32.o
+    0x08003d50   0x08003d50   0x00000110   Code   RO         6104    i.elog_get_filter_tag_lvl  elog.o
+    0x08003e60   0x08003e60   0x0000004c   Code   RO         6107    i.elog_init         elog.o
+    0x08003eac   0x08003eac   0x000003c0   Code   RO         6108    i.elog_output       elog.o
+    0x0800426c   0x0800426c   0x00000028   Code   RO         6109    i.elog_output_lock  elog.o
+    0x08004294   0x08004294   0x00000040   Code   RO         6110    i.elog_output_lock_enabled  elog.o
+    0x080042d4   0x080042d4   0x00000028   Code   RO         6111    i.elog_output_unlock  elog.o
+    0x080042fc   0x080042fc   0x00000008   Code   RO         6275    i.elog_port_get_p_info  elog_port.o
+    0x08004304   0x08004304   0x00000008   Code   RO         6276    i.elog_port_get_t_info  elog_port.o
+    0x0800430c   0x0800430c   0x00000064   Code   RO         6277    i.elog_port_get_time  elog_port.o
+    0x08004370   0x08004370   0x00000004   Code   RO         6278    i.elog_port_init    elog_port.o
+    0x08004374   0x08004374   0x00000010   Code   RO         6279    i.elog_port_output  elog_port.o
+    0x08004384   0x08004384   0x00000002   Code   RO         6280    i.elog_port_output_lock  elog_port.o
+    0x08004386   0x08004386   0x00000002   Code   RO         6281    i.elog_port_output_unlock  elog_port.o
+    0x08004388   0x08004388   0x000000c0   Code   RO         6115    i.elog_set_filter_lvl  elog.o
+    0x08004448   0x08004448   0x0000003c   Code   RO         6118    i.elog_set_filter_tag_lvl_default  elog.o
+    0x08004484   0x08004484   0x000000c4   Code   RO         6119    i.elog_set_fmt      elog.o
+    0x08004548   0x08004548   0x000000d4   Code   RO         6120    i.elog_set_output_enabled  elog.o
+    0x0800461c   0x0800461c   0x00000090   Code   RO         6121    i.elog_start        elog.o
+    0x080046ac   0x080046ac   0x00000108   Code   RO         6339    i.elog_strcpy       elog_utils.o
+    0x080047b4   0x080047b4   0x000000d0   Code   RO         6123    i.get_fmt_enabled   elog.o
+    0x08004884   0x08004884   0x0000001c   Code   RO         6124    i.get_fmt_used_and_enabled_ptr  elog.o
+    0x080048a0   0x080048a0   0x0000001c   Code   RO         6125    i.get_fmt_used_and_enabled_u32  elog.o
+    0x080048bc   0x080048bc   0x00000010   Code   RO          215    i.get_u32_inc       bootloader.o
+    0x080048cc   0x080048cc   0x0000002a   Code   RO          779    i.key_init          key.o
+    0x080048f6   0x080048f6   0x00000002   PAD
+    0x080048f8   0x080048f8   0x0000002c   Code   RO          216    i.key_press_check   bootloader.o
+    0x08004924   0x08004924   0x0000001a   Code   RO          780    i.key_read          key.o
+    0x0800493e   0x0800493e   0x00000002   PAD
+    0x08004940   0x08004940   0x0000007c   Code   RO          217    i.key_trap_check    bootloader.o
+    0x080049bc   0x080049bc   0x0000003c   Code   RO          809    i.led_init          led.o
+    0x080049f8   0x080049f8   0x00000012   Code   RO          810    i.led_off           led.o
+    0x08004a0a   0x08004a0a   0x00000012   Code   RO          811    i.led_on            led.o
+    0x08004a1c   0x08004a1c   0x0000001c   Code   RO          418    i.magic_header_get_address_partition  magic_header.o
+    0x08004a38   0x08004a38   0x0000001c   Code   RO          420    i.magic_header_get_crc32_partition  magic_header.o
+    0x08004a54   0x08004a54   0x0000001c   Code   RO          422    i.magic_header_get_length_partition  magic_header.o
+    0x08004a70   0x08004a70   0x000000f4   Code   RO          218    i.magic_header_trap_boot  bootloader.o
+    0x08004b64   0x08004b64   0x00000050   Code   RO          428    i.magic_header_validate_partition  magic_header.o
+    0x08004bb4   0x08004bb4   0x0000004e   Code   RO            1    i.main              main.o
+    0x08004c02   0x08004c02   0x00000018   Code   RO         6366    i.next_head         ringbuffer.o
+    0x08004c1a   0x08004c1a   0x00000002   PAD
+    0x08004c1c   0x08004c1c   0x00000070   Code   RO          603    i.partition_get_address  partition.o
+    0x08004c8c   0x08004c8c   0x0000001a   Code   RO          604    i.partition_get_download_target  partition.o
+    0x08004ca6   0x08004ca6   0x0000000c   Code   RO          605    i.partition_get_opposite  partition.o
+    0x08004cb2   0x08004cb2   0x00000002   PAD
+    0x08004cb4   0x08004cb4   0x0000006c   Code   RO          606    i.partition_get_size  partition.o
+    0x08004d20   0x08004d20   0x00000004   Code   RO          219    i.put_u16           bootloader.o
+    0x08004d24   0x08004d24   0x00000018   Code   RO          220    i.put_u16_inc       bootloader.o
+    0x08004d3c   0x08004d3c   0x00000010   Code   RO          221    i.put_u8_inc        bootloader.o
+    0x08004d4c   0x08004d4c   0x00000012   Code   RO         6367    i.rb_empty          ringbuffer.o
+    0x08004d5e   0x08004d5e   0x00000018   Code   RO         6368    i.rb_full           ringbuffer.o
+    0x08004d76   0x08004d76   0x00000036   Code   RO         6369    i.rb_get            ringbuffer.o
+    0x08004dac   0x08004dac   0x0000001c   Code   RO         6371    i.rb_new            ringbuffer.o
+    0x08004dc8   0x08004dc8   0x00000024   Code   RO         6372    i.rb_put            ringbuffer.o
+    0x08004dec   0x08004dec   0x00000026   Code   RO         6373    i.rb_puts           ringbuffer.o
+    0x08004e12   0x08004e12   0x00000002   PAD
+    0x08004e14   0x08004e14   0x00000084   Code   RO          222    i.rx_trap_boot      bootloader.o
+    0x08004e98   0x08004e98   0x000000e8   Code   RO          919    i.stm32_flash_erase  stm32_flash.o
+    0x08004f80   0x08004f80   0x00000008   Code   RO          920    i.stm32_flash_lock  stm32_flash.o
+    0x08004f88   0x08004f88   0x00000084   Code   RO          921    i.stm32_flash_program  stm32_flash.o
+    0x0800500c   0x0800500c   0x00000008   Code   RO          922    i.stm32_flash_unlock  stm32_flash.o
+    0x08005014   0x08005014   0x00000078   Code   RO          852    i.tim_delay_init    tim_delay.o
+    0x0800508c   0x0800508c   0x00000028   Code   RO          853    i.tim_delay_ms      tim_delay.o
+    0x080050b4   0x080050b4   0x00000014   Code   RO          855    i.tim_get_ms        tim_delay.o
+    0x080050c8   0x080050c8   0x0000003c   Code   RO          857    i.tim_now           tim_delay.o
+    0x08005104   0x08005104   0x00000048   Code   RO          680    i.usart_io_init     bl_usart.o
+    0x0800514c   0x0800514c   0x0000004c   Code   RO          681    i.usart_it_config   bl_usart.o
+    0x08005198   0x08005198   0x0000004c   Code   RO          682    i.usart_lowlevel_init  bl_usart.o
+    0x080051e4   0x080051e4   0x0000001c   Code   RO          223    i.wait_key_release  bootloader.o
+    0x08005200   0x08005200   0x000001a4   Data   RO          225    .constdata          bootloader.o
+    0x080053a4   0x080053a4   0x000000af   Data   RO          518    .constdata          boot_config.o
+    0x08005453   0x08005453   0x0000007b   Data   RO          609    .constdata          partition.o
+    0x080054ce   0x080054ce   0x00000002   PAD
+    0x080054d0   0x080054d0   0x00000086   Data   RO          923    .constdata          stm32_flash.o
+    0x08005556   0x08005556   0x00000200   Data   RO         6022    .constdata          crc16.o
+    0x08005756   0x08005756   0x00000002   PAD
+    0x08005758   0x08005758   0x00000400   Data   RO         6036    .constdata          crc32.o
+    0x08005b58   0x08005b58   0x000000c6   Data   RO         6127    .constdata          elog.o
+    0x08005c1e   0x08005c1e   0x00000023   Data   RO         6340    .constdata          elog_utils.o
+    0x08005c41   0x08005c41   0x00000003   PAD
+    0x08005c44   0x08005c44   0x00000017   Data   RO         6128    .conststring        elog.o
+    0x08005c5b   0x08005c5b   0x00000001   PAD
+    0x08005c5c   0x08005c5c   0x00000020   Data   RO         6746    Region$$Table       anon$$obj.o
+
+
+    Execution Region RW_IRAM1 (Exec base: 0x20000000, Load base: 0x08005c7c, Size: 0x00002ec8, Max: 0x00020000, ABSOLUTE)
+
+    Exec Addr    Load Addr    Size         Type   Attr      Idx    E Section Name        Object
+
+    0x20000000   0x08005c7c   0x00000054   Data   RW           46    .data               board.o
+    0x20000054   0x08005cd0   0x00000004   PAD
+    0x20000058   0x08005cd4   0x00000018   Data   RW          226    .data               bootloader.o
+    0x20000070   0x08005cec   0x00000004   Data   RW          683    .data               bl_usart.o
+    0x20000074   0x08005cf0   0x00000004   PAD
+    0x20000078   0x08005cf4   0x0000000c   Data   RW          859    .data               tim_delay.o
+    0x20000084   0x08005d00   0x00000010   Data   RW         3873    .data               stm32f4xx_rcc.o
+    0x20000094   0x08005d10   0x0000001c   Data   RW         6129    .data               elog.o
+    0x200000b0        -       0x0000250e   Zero   RW          224    .bss                bootloader.o
+    0x200025be   0x08005d2c   0x00000002   PAD
+    0x200025c0        -       0x000004f8   Zero   RW         6126    .bss                elog.o
+    0x20002ab8        -       0x00000010   Zero   RW         6282    .bss                elog_port.o
+    0x20002ac8        -       0x00000400   Zero   RW          968    STACK               startup_stm32f40_41xxx.o
 
 
 ==============================================================================
@@ -2666,7 +2896,8 @@ Image component sizes
 
        364         42          0          4          0      30864   bl_usart.o
         84          0          0         84          0     298610   board.o
-      4232       1704        287         24       9230      48357   bootloader.o
+      1690        800        175          0          0       8865   boot_config.o
+      6856       2874        420         24       9486      53593   bootloader.o
        180         16          0          0          0       2243   console.o
         44          4        512          0          0       1364   crc16.o
         52          4       1024          0          0       2904   crc32.o
@@ -2676,12 +2907,13 @@ Image component sizes
          8          0          0          0          0        392   jumpapp.o
         68          0          0          0          0       1174   key.o
         96          0          0          0          0       1650   led.o
-        88         28          0          0          0       3818   magic_header.o
+       164         44          0          0          0       4338   magic_header.o
         78          0          0          0          0       5459   main.o
        120         14          0          0          0       1216   misc.o
+       258        124        123          0          0       6340   partition.o
        222          0          0          0          0       5818   ringbuffer.o
         36          8        392          0       1024        892   startup_stm32f40_41xxx.o
-       372        186        134          0          0       3562   stm32_flash.o
+       380        184        134          0          0       3562   stm32_flash.o
        390         34          0          0          0       4359   stm32f4xx_flash.o
        262          0          0          0          0       3913   stm32f4xx_gpio.o
        392         48          0         16          0       6269   stm32f4xx_rcc.o
@@ -2691,9 +2923,9 @@ Image component sizes
        308         24          0         12          0       3745   tim_delay.o
 
     ----------------------------------------------------------------------
-     12044       3274       2644        176      11544     472779   Object Totals
+     16708       5382       3076        176      11800     493740   Object Totals
          0          0         32          0          0          0   (incl. Generated)
-        14          0          7          8          2          0   (incl. Padding)
+        22          0          8          8          2          0   (incl. Padding)
 
     ----------------------------------------------------------------------
 
@@ -2714,6 +2946,7 @@ Image component sizes
         30          0          0          0          0         68   llshl.o
         36          0          0          0          0         68   llsshr.o
         32          0          0          0          0         68   llushr.o
+        26          0          0          0          0         80   memcmp.o
         36          0          0          0          0         68   memcpya.o
         36          0          0          0          0        108   memseta.o
       2312         90          0          0          0        616   printfa.o
@@ -2730,18 +2963,18 @@ Image component sizes
        228          0          0          0          0         96   dmul.o
 
     ----------------------------------------------------------------------
-      3864        106          0          0          0       2120   Library Totals
-         4          0          0          0          0          0   (incl. Padding)
+      3892        106          0          0          0       2200   Library Totals
+         6          0          0          0          0          0   (incl. Padding)
 
     ----------------------------------------------------------------------
 
       Code (inc. data)   RO Data    RW Data    ZI Data      Debug   Library Name
 
-      2794        106          0          0          0       1464   mc_w.l
+      2820        106          0          0          0       1544   mc_w.l
       1066          0          0          0          0        656   mf_w.l
 
     ----------------------------------------------------------------------
-      3864        106          0          0          0       2120   Library Totals
+      3892        106          0          0          0       2200   Library Totals
 
     ----------------------------------------------------------------------
 
@@ -2750,15 +2983,15 @@ Image component sizes
 
       Code (inc. data)   RO Data    RW Data    ZI Data      Debug   
 
-     15908       3380       2644        176      11544     462211   Grand Totals
-     15908       3380       2644        176      11544     462211   ELF Image Totals
-     15908       3380       2644        176          0          0   ROM Totals
+     20600       5488       3076        176      11800     481200   Grand Totals
+     20600       5488       3076        176      11800     481200   ELF Image Totals
+     20600       5488       3076        176          0          0   ROM Totals
 
 ==============================================================================
 
-    Total RO  Size (Code + RO Data)                18552 (  18.12kB)
-    Total RW  Size (RW Data + ZI Data)             11720 (  11.45kB)
-    Total ROM Size (Code + RO Data + RW Data)      18728 (  18.29kB)
+    Total RO  Size (Code + RO Data)                23676 (  23.12kB)
+    Total RW  Size (RW Data + ZI Data)             11976 (  11.70kB)
+    Total ROM Size (Code + RO Data + RW Data)      23852 (  23.29kB)
 
 ==============================================================================
 

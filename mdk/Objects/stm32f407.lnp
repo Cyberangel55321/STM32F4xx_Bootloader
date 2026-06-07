@@ -3,6 +3,8 @@
 ".\objects\board.o"
 ".\objects\bootloader.o"
 ".\objects\magic_header.o"
+".\objects\boot_config.o"
+".\objects\partition.o"
 ".\objects\jumpapp.o"
 ".\objects\bl_usart.o"
 ".\objects\console.o"

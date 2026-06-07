@@ -44,7 +44,7 @@ void stm32_flash_erase(uint32_t address, uint32_t size)
 
     for (uint32_t i = 0; i < sizeof(sector_descs) / sizeof(sector_desc_t); i++)
     {
-        if (addr >= address && addr < address + size)
+        if (addr + sector_descs[i].size > address && addr < address + size)
         {
             log_i("erasing sector %lu at address 0x%08lX size %lu\n", i, addr, sector_descs[i].size);
             if (FLASH_EraseSector(sector_descs[i].sector, VoltageRange_3) != FLASH_COMPLETE)

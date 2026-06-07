@@ -3,9 +3,13 @@
 #include "crc32.h"
 #include "utils.h"
 #include "magic_header.h"
+#include "partition.h"
 
 #define MAGIC_HEADER_MAGIC 0x4D414749 // "MAGI"
-#define MAGIC_HEADER_ADDR  0x0800C000
+
+/* Magic Header地址 - 完全对称布局 */
+#define MAGIC_HEADER_APP0_ADDR  0x08010000  // APP0分区起始
+#define MAGIC_HEADER_APP1_ADDR  0x08050000  // APP1分区起始
 
 
 typedef struct
@@ -32,7 +36,26 @@ typedef struct
 
 bool magic_header_validate(void)
 {
-    magic_header_t *header = (magic_header_t *)MAGIC_HEADER_ADDR;
+    return magic_header_validate_partition(PARTITION_APP0);
+}
+
+bool magic_header_validate_partition(partition_t partition)
+{
+    uint32_t addr;
+    if (partition == PARTITION_APP0)
+    {
+        addr = MAGIC_HEADER_APP0_ADDR;
+    }
+    else if (partition == PARTITION_APP1)
+    {
+        addr = MAGIC_HEADER_APP1_ADDR;
+    }
+    else
+    {
+        return false;
+    }
+
+    magic_header_t *header = (magic_header_t *)addr;
 
     if (header->magic != MAGIC_HEADER_MAGIC)
         return false;
@@ -44,32 +67,63 @@ bool magic_header_validate(void)
     return true;
 }
 
-magic_header_type_t magic_header_get_type(void)
+magic_header_type_t magic_header_get_type_partition(partition_t partition)
 {
-    magic_header_t *header = (magic_header_t *)MAGIC_HEADER_ADDR;
+    uint32_t addr = (partition == PARTITION_APP0) ? MAGIC_HEADER_APP0_ADDR : MAGIC_HEADER_APP1_ADDR;
+    magic_header_t *header = (magic_header_t *)addr;
     return (magic_header_type_t)header->data_type;
 }
 
-uint32_t magic_header_get_offset(void)
+uint32_t magic_header_get_offset_partition(partition_t partition)
 {
-    magic_header_t *header = (magic_header_t *)MAGIC_HEADER_ADDR;
+    uint32_t addr = (partition == PARTITION_APP0) ? MAGIC_HEADER_APP0_ADDR : MAGIC_HEADER_APP1_ADDR;
+    magic_header_t *header = (magic_header_t *)addr;
     return header->data_offset;
+}
+
+uint32_t magic_header_get_address_partition(partition_t partition)
+{
+    uint32_t addr = (partition == PARTITION_APP0) ? MAGIC_HEADER_APP0_ADDR : MAGIC_HEADER_APP1_ADDR;
+    magic_header_t *header = (magic_header_t *)addr;
+    return header->data_address;
+}
+
+uint32_t magic_header_get_length_partition(partition_t partition)
+{
+    uint32_t addr = (partition == PARTITION_APP0) ? MAGIC_HEADER_APP0_ADDR : MAGIC_HEADER_APP1_ADDR;
+    magic_header_t *header = (magic_header_t *)addr;
+    return header->data_length;
+}
+
+uint32_t magic_header_get_crc32_partition(partition_t partition)
+{
+    uint32_t addr = (partition == PARTITION_APP0) ? MAGIC_HEADER_APP0_ADDR : MAGIC_HEADER_APP1_ADDR;
+    magic_header_t *header = (magic_header_t *)addr;
+    return header->data_crc32;
+}
+
+/* 原函数兼容，默认使用APP0 */
+magic_header_type_t magic_header_get_type(void) 
+{ 
+    return magic_header_get_type_partition(PARTITION_APP0);
+}
+
+uint32_t magic_header_get_offset(void)
+{ 
+    return magic_header_get_offset_partition(PARTITION_APP0);
 }
 
 uint32_t magic_header_get_address(void)
 {
-    magic_header_t *header = (magic_header_t *)MAGIC_HEADER_ADDR;
-    return header->data_address;
+    return magic_header_get_address_partition(PARTITION_APP0);
 }
 
 uint32_t magic_header_get_length(void)
 {
-    magic_header_t *header = (magic_header_t *)MAGIC_HEADER_ADDR;
-    return header->data_length;
+    return magic_header_get_length_partition(PARTITION_APP0);
 }
 
 uint32_t magic_header_get_crc32(void)
 {
-    magic_header_t *header = (magic_header_t *)MAGIC_HEADER_ADDR;
-    return header->data_crc32;
+    return magic_header_get_crc32_partition(PARTITION_APP0);
 }
