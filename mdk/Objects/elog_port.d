@@ -1,9 +1,0 @@
-.\objects\elog_port.o: ..\third_lib\easylogger\elog_port.c
-.\objects\elog_port.o: F:\APP\keil\keil5\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
-.\objects\elog_port.o: ..\third_lib\easylogger\elog.h
-.\objects\elog_port.o: ..\third_lib\easylogger\elog_cfg.h
-.\objects\elog_port.o: F:\APP\keil\keil5\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
-.\objects\elog_port.o: F:\APP\keil\keil5\Keil_v5\ARM\ARMCC\Bin\..\include\stddef.h
-.\objects\elog_port.o: F:\APP\keil\keil5\Keil_v5\ARM\ARMCC\Bin\..\include\stdbool.h
-.\objects\elog_port.o: ..\driver\console.h
-.\objects\elog_port.o: ..\driver\tim_delay.h

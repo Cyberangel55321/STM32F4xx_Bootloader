@@ -1,9 +1,0 @@
-.\objects\magic_header.o: ..\app\magic_header.c
-.\objects\magic_header.o: F:\APP\keil\keil5\Keil_v5\ARM\ARMCC\Bin\..\include\stdbool.h
-.\objects\magic_header.o: F:\APP\keil\keil5\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
-.\objects\magic_header.o: ..\third_lib\crc\crc32.h
-.\objects\magic_header.o: F:\APP\keil\keil5\Keil_v5\ARM\ARMCC\Bin\..\include\stddef.h
-.\objects\magic_header.o: ..\app\utils.h
-.\objects\magic_header.o: ..\app\bitops.h
-.\objects\magic_header.o: F:\APP\keil\keil5\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
-.\objects\magic_header.o: ..\app\magic_header.h

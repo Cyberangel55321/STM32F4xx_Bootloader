@@ -1,9 +1,0 @@
-.\objects\main.o: ..\app\main.c
-.\objects\main.o: F:\APP\keil\keil5\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
-.\objects\main.o: F:\APP\keil\keil5\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
-.\objects\main.o: ..\driver\console.h
-.\objects\main.o: ..\driver\tim_delay.h
-.\objects\main.o: ..\third_lib\easylogger\elog.h
-.\objects\main.o: ..\third_lib\easylogger\elog_cfg.h
-.\objects\main.o: F:\APP\keil\keil5\Keil_v5\ARM\ARMCC\Bin\..\include\stddef.h
-.\objects\main.o: F:\APP\keil\keil5\Keil_v5\ARM\ARMCC\Bin\..\include\stdbool.h
